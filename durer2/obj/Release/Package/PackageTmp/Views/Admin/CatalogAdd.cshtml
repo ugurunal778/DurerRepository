@@ -1,0 +1,67 @@
+﻿@model Dto.ContentDto
+
+@{
+    ViewBag.Title = "Katalog Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-content">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="sidebar content-box" style="display: block;">
+                <ul class="nav">
+                    <li><a href="/Admin/Pages/28"><i class="glyphicon glyphicon-file"></i> Sayfa Yönetimi</a></li>
+                    <li><a href="/Admin/News"><i class="glyphicon glyphicon-bullhorn"></i> Haber Yönetimi</a></li>
+                    <li><a href="/Admin/MediaList"><i class="glyphicon glyphicon-globe"></i> Basın</a></li>
+                    <li class="current"><a href="/Admin/Catalogs"><i class="glyphicon glyphicon-certificate"></i> Kataloglar</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="content-box-header">
+                                <div class="panel-title">Katalog Ekle</div>
+
+                                <div class="panel-options">
+                                    <a href="/Admin/Catalogs" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-chevron-left"></i> Geri Dön</a>
+                                </div>
+                            </div>
+                            <div class="content-box-large box-with-header">
+                                @if (ViewData["success"] != null)
+                                {
+                                    <div class="alert alert-success">
+                                        @ViewData["success"].ToString()
+                                    </div>
+                                }
+                                <form role="form" method="post" action="/Admin/CatalogAdd" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label>Dosya Başlığı</label>
+                                        <input class="form-control" type="text" name="FileTitle" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Dosya</label>
+                                        <input type="file" class="btn btn-default" name="FileUrl" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Görsel</label>
+                                        <input type="file" class="btn btn-default" name="ImageUrl" required />
+                                    </div>
+                                    <div>
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fa fa-save"></i>
+                                            Kaydet
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

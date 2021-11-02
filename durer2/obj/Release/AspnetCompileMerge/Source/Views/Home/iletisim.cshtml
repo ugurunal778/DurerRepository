@@ -1,0 +1,53 @@
+﻿@model Dto.ContactDto
+@{
+    ViewBag.Title = "DURER - "+durer2.Resource.Resources.ContactUpper;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content-wrapper">
+    <div class="banner">
+        <img src="img/res/banner4.jpg" />
+    </div>
+    <div class="sub-links">
+        <div class="address">
+            <div class="location">
+                @Html.Raw(Model.Address)
+            </div>
+            <div class="tel">
+                @Model.Mobile
+            </div>
+            <div class="tel">
+                @Model.Tel
+            </div>
+            <div class="fax">
+                @Model.Fax
+            </div>
+            <div class="email">
+                @Model.Email
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <script>
+          function initMap() {
+              var pos = { lat: 41.21738441696223, lng: 28.0640770562752 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 11,
+              center: { lat: 41.21738441696223, lng: 28.0640770562752 }
+            }); var contentString = 'DURER REFRAKTER';
+
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+            var marker = new google.maps.Marker({
+              position: pos,
+              map: map
+            });
+            infowindow.open(map, marker);
+          }
+        </script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCk96RKlmS9661GnPhugIgm2J2KnYw7nj8&callback=initMap">
+        </script>
+        <div id="map"></div>
+    </div>
+</div>

@@ -1,0 +1,91 @@
+﻿@model IList<durer2.ServiceReference.PageDto>
+@{
+    ViewBag.Title = "Sayfa Yönetimi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-content">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="sidebar content-box" style="display: block;">
+                <ul class="nav">
+                    <li class="current"><a href="/Admin/Pages/28"><i class="glyphicon glyphicon-file"></i> Sayfa Yönetimi</a></li>
+                    <li><a href="/Admin/News"><i class="glyphicon glyphicon-bullhorn"></i> Haber Yönetimi</a></li>
+                    <li><a href="/Admin/MediaList"><i class="glyphicon glyphicon-globe"></i> Basın</a></li>
+                    <li><a href="/Admin/Catalogs"><i class="glyphicon glyphicon-certificate"></i> Kataloglar</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="content-box-header">
+                                <div class="panel-title">Sayfa Yönetimi</div>
+
+                                <div class="panel-options">
+                                    <a href="/Admin/PageAdd/@ViewContext.RouteData.Values["id"]" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-plus"></i> Ekle</a>
+                                </div>
+                            </div>
+                            <div class="content-box-large box-with-header">
+                                <div class="form-group">
+                                    <div class="col-md-4">
+                                        <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" class="form-control">
+                                            <option value="/Admin/Pages/28" @((Convert.ToInt32(Url.RequestContext.RouteData.Values["id"]) == 28) ? " selected" : "")>@durer2.Resource.Resources.CompanyUpper</option>
+                                            <option value="/Admin/Pages/29" @((Convert.ToInt32(Url.RequestContext.RouteData.Values["id"]) == 29) ? " selected" : "")>@durer2.Resource.Resources.IndustriesUpper</option>
+                                            <option value="/Admin/Pages/30" @((Convert.ToInt32(Url.RequestContext.RouteData.Values["id"]) == 30) ? " selected" : "")>@durer2.Resource.Resources.ProductsUpper</option>
+                                            <option value="/Admin/Pages/31" @((Convert.ToInt32(Url.RequestContext.RouteData.Values["id"]) == 31) ? " selected" : "")>@durer2.Resource.Resources.OurServicesUpper</option>
+                                            <option value="/Admin/Pages/33" @((Convert.ToInt32(Url.RequestContext.RouteData.Values["id"]) == 33) ? " selected" : "")>@durer2.Resource.Resources.HrUpper</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Başlık</th>
+                                            <th>Düzenleme</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@item.Title</td>
+                                                <td>
+
+                                                    @if (item.Active)
+                                                    {
+                                                        <a href="/Admin/PageActive/@item.Id" class="btn btn-success btn-xs">
+                                                            Pasifleştir
+                                                        </a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a href="/Admin/PageActive/@item.Id" class="btn btn-danger btn-xs">
+                                                            Aktifleştir
+                                                        </a>
+                                                    }
+                                                    <a href="/Admin/PageOrder/@item.Id?isDown=false" class="btn btn-default btn-xs">
+                                                        <span class="glyphicon glyphicon-arrow-up"></span>
+                                                    </a>
+                                                    <a href="/Admin/PageOrder/@item.Id?isDown=true" class="btn btn-default btn-xs">
+                                                        <span class="glyphicon glyphicon-arrow-down"></span>
+                                                    </a>
+                                                    <a href="#" class="btn btn-default btn-xs" onclick="javascript:confirm('Emin misiniz?')?document.location = '/Admin/PageDelete/@item.Id':'';">
+                                                        <span class="glyphicon glyphicon-remove"></span> Sil
+                                                    </a>
+                                                    <a href="/Admin/PageList/@item.Id" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-edit"></i> Düzenle</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

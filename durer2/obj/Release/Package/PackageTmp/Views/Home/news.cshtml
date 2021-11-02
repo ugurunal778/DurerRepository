@@ -1,0 +1,44 @@
+﻿@model IList<Dto.NewsImageDto>
+@{
+    ViewBag.Title = "DURER - " + durer2.Resource.Resources.NewsUpper;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var pageLinks = ViewBag.pageLinks;
+}
+
+<div class="content-wrapper">
+    <div class="banner">
+        <img src="@Url.Content(ViewBag.Banner)" />
+    </div>
+    <div class="sub-links">
+        <ul>
+            @foreach (var item in pageLinks)
+            {
+                <li>
+                    @Html.ActionLink((string)item.Title, "Page", "Home", new { permalink = item.Permalink }, null)
+                </li>
+            }
+            <li class="selected"><a href="@durer2.Resource.Resources.NewsUrl">@durer2.Resource.Resources.NewsUpper</a></li>
+            <li><a href="@durer2.Resource.Resources.PressUrl">@durer2.Resource.Resources.PressUpper</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="news">
+            @for (int i = 0; i < ViewBag.News.Count; i++)
+            {
+                <a href="javascript: void(0)" class="news-title"><span>@ViewBag.News[i].CreateDate.ToString("d MMM yyyy")</span>@ViewBag.News[i].Title</a>
+                <div class='news-accordion'>
+                    @if (Model.Count > 0)
+                    {
+                        <div class="news-images">
+                            @foreach (var item in Model.Where(x => x.NewsId == ViewBag.News[i].Id))
+                            {
+                                <a href="@Url.Content(item.ImageUrl)" data-featherlight="image"><img src="@Url.Content(item.ImageUrl)" /></a>
+                            }
+                        </div>
+                    }
+                    @Html.Raw(ViewBag.News[i].Content)
+                </div>
+            }
+        </div>
+    </div>
+</div>

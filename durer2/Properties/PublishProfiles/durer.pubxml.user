@@ -1,0 +1,763 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\Hüseyin\Desktop\durerDeploy</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>05/25/2017 20:20:00</publishTime>
+    </File>
+    <File Include="bin/Dto.dll">
+      <publishTime>09/05/2017 17:57:43</publishTime>
+    </File>
+    <File Include="bin/durer2.dll">
+      <publishTime>09/05/2017 17:57:44</publishTime>
+    </File>
+    <File Include="bin/en-US/durer2.resources.dll">
+      <publishTime>09/05/2017 17:57:44</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>05/25/2017 20:34:09</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>05/25/2017 20:34:09</publishTime>
+    </File>
+    <File Include="bin/Facade.dll">
+      <publishTime>09/05/2017 17:57:43</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>05/25/2017 20:20:02</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>05/25/2017 20:20:00</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>05/25/2017 20:20:01</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>05/25/2017 20:20:02</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>05/25/2017 20:20:02</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>05/25/2017 20:20:02</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>05/25/2017 20:20:02</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>05/25/2017 20:20:02</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>05/25/2017 20:20:02</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>05/25/2017 20:20:02</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>05/25/2017 20:20:02</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>05/25/2017 20:20:02</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>05/25/2017 20:20:02</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>05/25/2017 20:20:02</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>05/25/2017 20:20:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.Abstractions.dll">
+      <publishTime>08/13/2013 00:19:06</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>05/25/2017 20:19:59</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>05/25/2017 20:20:00</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>05/25/2017 20:19:59</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>05/25/2017 20:19:59</publishTime>
+    </File>
+    <File Include="bin/System.Web.Routing.dll">
+      <publishTime>08/13/2013 00:19:06</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>05/25/2017 20:19:59</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>05/25/2017 20:19:59</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>05/25/2017 20:19:59</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>05/25/2017 20:20:00</publishTime>
+    </File>
+    <File Include="css/featherlight.gallery.min.css">
+      <publishTime>07/12/2017 14:29:28</publishTime>
+    </File>
+    <File Include="css/featherlight.min.css">
+      <publishTime>07/01/2017 16:57:48</publishTime>
+    </File>
+    <File Include="css/main.css">
+      <publishTime>08/24/2017 10:04:30</publishTime>
+    </File>
+    <File Include="css/meanmenu.min.css">
+      <publishTime>08/23/2017 13:07:53</publishTime>
+    </File>
+    <File Include="css/reset.css">
+      <publishTime>05/09/2017 18:23:59</publishTime>
+    </File>
+    <File Include="css/styles.css">
+      <publishTime>08/22/2017 22:28:44</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>05/25/2017 20:19:57</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>05/25/2017 20:19:57</publishTime>
+    </File>
+    <File Include="img/brick.jpg">
+      <publishTime>07/07/2017 14:39:52</publishTime>
+    </File>
+    <File Include="img/catalog-bg.jpg">
+      <publishTime>07/07/2017 14:14:24</publishTime>
+    </File>
+    <File Include="img/default-news-image.png">
+      <publishTime>06/01/2017 23:30:21</publishTime>
+    </File>
+    <File Include="img/durer-refrakter-en.png">
+      <publishTime>08/24/2017 15:59:37</publishTime>
+    </File>
+    <File Include="img/durer-refrakter.png">
+      <publishTime>08/24/2017 15:59:51</publishTime>
+    </File>
+    <File Include="img/email-icon.png">
+      <publishTime>05/10/2017 15:27:38</publishTime>
+    </File>
+    <File Include="img/fax-icon.png">
+      <publishTime>05/10/2017 15:27:23</publishTime>
+    </File>
+    <File Include="img/haznedar-group-lg.jpg">
+      <publishTime>07/24/2017 19:40:39</publishTime>
+    </File>
+    <File Include="img/haznedar-group.png">
+      <publishTime>07/10/2017 18:14:51</publishTime>
+    </File>
+    <File Include="img/haznedar-refrakter-en.png">
+      <publishTime>08/24/2017 15:59:22</publishTime>
+    </File>
+    <File Include="img/haznedar-refrakter.png">
+      <publishTime>08/24/2017 15:51:08</publishTime>
+    </File>
+    <File Include="img/kullanim.jpg">
+      <publishTime>07/07/2017 15:30:03</publishTime>
+    </File>
+    <File Include="img/loading.gif">
+      <publishTime>07/12/2017 16:42:20</publishTime>
+    </File>
+    <File Include="img/location-icon.png">
+      <publishTime>05/10/2017 15:27:05</publishTime>
+    </File>
+    <File Include="img/location.png">
+      <publishTime>05/10/2017 15:30:45</publishTime>
+    </File>
+    <File Include="img/logo-en.png">
+      <publishTime>08/24/2017 15:04:06</publishTime>
+    </File>
+    <File Include="img/logo.png">
+      <publishTime>07/14/2017 19:25:31</publishTime>
+    </File>
+    <File Include="img/main-slide1-mobile.jpg">
+      <publishTime>08/16/2017 11:29:37</publishTime>
+    </File>
+    <File Include="img/main-slide1.jpg">
+      <publishTime>08/16/2017 11:28:10</publishTime>
+    </File>
+    <File Include="img/main-slide2-mobile.jpg">
+      <publishTime>08/22/2017 22:41:57</publishTime>
+    </File>
+    <File Include="img/main-slide2.jpg">
+      <publishTime>08/22/2017 22:42:59</publishTime>
+    </File>
+    <File Include="img/main-slide3-mobile.jpg">
+      <publishTime>08/16/2017 11:34:22</publishTime>
+    </File>
+    <File Include="img/main-slide3.jpg">
+      <publishTime>08/16/2017 11:33:36</publishTime>
+    </File>
+    <File Include="img/main-slide4-mobile.jpg">
+      <publishTime>07/14/2017 15:37:18</publishTime>
+    </File>
+    <File Include="img/main-slide4.jpg">
+      <publishTime>07/14/2017 15:38:54</publishTime>
+    </File>
+    <File Include="img/main-slide5-mobile.jpg">
+      <publishTime>08/16/2017 11:29:17</publishTime>
+    </File>
+    <File Include="img/main-slide5.jpg">
+      <publishTime>08/16/2017 11:27:47</publishTime>
+    </File>
+    <File Include="img/menu-arrow.png">
+      <publishTime>05/11/2017 22:13:57</publishTime>
+    </File>
+    <File Include="img/menu-icon.png">
+      <publishTime>05/11/2017 22:15:58</publishTime>
+    </File>
+    <File Include="img/musteriagi-dunya.png">
+      <publishTime>05/10/2017 15:04:06</publishTime>
+    </File>
+    <File Include="img/musteriagi-turkiye.png">
+      <publishTime>07/05/2017 13:45:23</publishTime>
+    </File>
+    <File Include="img/pdf-icon.png">
+      <publishTime>07/25/2017 03:54:17</publishTime>
+    </File>
+    <File Include="img/res/16879b20-b054-46bd-8f5e-8b50bcfe9232.png">
+      <publishTime>05/19/2017 01:51:12</publishTime>
+    </File>
+    <File Include="img/res/805c5464-c098-45d5-b3cf-0e6f756d1b1b.png">
+      <publishTime>06/01/2017 02:27:57</publishTime>
+    </File>
+    <File Include="img/res/9e5982be-d92e-4d27-9e88-bd4ee27559e4.png">
+      <publishTime>05/19/2017 01:51:06</publishTime>
+    </File>
+    <File Include="img/res/b610676b-fc23-4571-a337-20df169ccb78.png">
+      <publishTime>05/19/2017 01:50:51</publishTime>
+    </File>
+    <File Include="img/res/banner1.jpg">
+      <publishTime>05/11/2017 21:26:14</publishTime>
+    </File>
+    <File Include="img/res/banner2.jpg">
+      <publishTime>05/11/2017 21:26:26</publishTime>
+    </File>
+    <File Include="img/res/banner3.jpg">
+      <publishTime>05/11/2017 21:26:41</publishTime>
+    </File>
+    <File Include="img/res/banner4.jpg">
+      <publishTime>05/11/2017 21:26:33</publishTime>
+    </File>
+    <File Include="img/res/catalog1.png">
+      <publishTime>06/10/2017 00:16:08</publishTime>
+    </File>
+    <File Include="img/res/catalog2.png">
+      <publishTime>06/10/2017 00:16:07</publishTime>
+    </File>
+    <File Include="img/res/demircelik/bof.jpg">
+      <publishTime>07/14/2017 20:01:43</publishTime>
+    </File>
+    <File Include="img/res/demircelik/eao1.jpg">
+      <publishTime>07/14/2017 20:01:42</publishTime>
+    </File>
+    <File Include="img/res/demircelik/eao2.jpg">
+      <publishTime>07/14/2017 20:01:45</publishTime>
+    </File>
+    <File Include="img/res/demircelik/eao3.jpg">
+      <publishTime>07/14/2017 20:01:55</publishTime>
+    </File>
+    <File Include="img/res/demircelik/pik.jpg">
+      <publishTime>07/14/2017 20:01:48</publishTime>
+    </File>
+    <File Include="img/res/demircelik/potaladle.jpg">
+      <publishTime>07/14/2017 20:01:55</publishTime>
+    </File>
+    <File Include="img/res/demircelik/schemablueen.png">
+      <publishTime>08/16/2017 04:06:24</publishTime>
+    </File>
+    <File Include="img/res/demircelik/schemabluetr.png">
+      <publishTime>08/16/2017 04:05:56</publishTime>
+    </File>
+    <File Include="img/res/demircelik/schemareden.png">
+      <publishTime>08/16/2017 04:02:56</publishTime>
+    </File>
+    <File Include="img/res/demircelik/schemaredtr.png">
+      <publishTime>08/16/2017 04:03:28</publishTime>
+    </File>
+    <File Include="img/res/demircelik/tandis.jpg">
+      <publishTime>07/14/2017 20:01:59</publishTime>
+    </File>
+    <File Include="img/res/demircelik/tf.jpg">
+      <publishTime>07/14/2017 20:02:01</publishTime>
+    </File>
+    <File Include="img/res/demircelik/tf2.jpg">
+      <publishTime>07/14/2017 20:02:05</publishTime>
+    </File>
+    <File Include="img/res/demircelik/yanmaoda.jpg">
+      <publishTime>07/14/2017 20:02:05</publishTime>
+    </File>
+    <File Include="img/res/demircelik/yanmaoda2.jpg">
+      <publishTime>07/14/2017 20:02:15</publishTime>
+    </File>
+    <File Include="img/res/demircelik/yf.jpg">
+      <publishTime>07/14/2017 20:02:08</publishTime>
+    </File>
+    <File Include="img/res/demircelik/yfsobasi.jpg">
+      <publishTime>07/14/2017 20:02:11</publishTime>
+    </File>
+    <File Include="img/res/df641240-eaad-4675-a7d6-68747d0f896c.png">
+      <publishTime>06/01/2017 02:26:36</publishTime>
+    </File>
+    <File Include="img/res/df95463c-a865-4921-9c05-e01038ea595c.xlsx">
+      <publishTime>06/01/2017 00:45:20</publishTime>
+    </File>
+    <File Include="img/res/image1.png">
+      <publishTime>05/10/2017 16:20:34</publishTime>
+    </File>
+    <File Include="img/res/montaj/lg1.JPG">
+      <publishTime>08/17/2017 15:53:12</publishTime>
+    </File>
+    <File Include="img/res/montaj/lg2.jpg">
+      <publishTime>08/17/2017 15:53:12</publishTime>
+    </File>
+    <File Include="img/res/montaj/lg3.JPG">
+      <publishTime>08/17/2017 15:53:12</publishTime>
+    </File>
+    <File Include="img/res/montaj/lg4.JPG">
+      <publishTime>08/17/2017 15:53:12</publishTime>
+    </File>
+    <File Include="img/res/montaj/lg5.JPG">
+      <publishTime>08/17/2017 15:53:12</publishTime>
+    </File>
+    <File Include="img/res/montaj/lg6.jpg">
+      <publishTime>07/25/2017 12:08:48</publishTime>
+    </File>
+    <File Include="img/res/montaj/lg7.JPG">
+      <publishTime>07/25/2017 12:08:44</publishTime>
+    </File>
+    <File Include="img/res/montaj/lg8.jpg">
+      <publishTime>07/25/2017 13:09:18</publishTime>
+    </File>
+    <File Include="img/res/montaj/thumb1.jpg">
+      <publishTime>08/17/2017 16:01:18</publishTime>
+    </File>
+    <File Include="img/res/montaj/thumb2.jpg">
+      <publishTime>08/17/2017 16:01:56</publishTime>
+    </File>
+    <File Include="img/res/montaj/thumb3.jpg">
+      <publishTime>08/17/2017 16:02:28</publishTime>
+    </File>
+    <File Include="img/res/montaj/thumb4.jpg">
+      <publishTime>08/17/2017 16:00:29</publishTime>
+    </File>
+    <File Include="img/res/montaj/thumb5.jpg">
+      <publishTime>08/17/2017 16:00:49</publishTime>
+    </File>
+    <File Include="img/res/montaj/thumb6.jpg">
+      <publishTime>07/25/2017 15:57:42</publishTime>
+    </File>
+    <File Include="img/res/montaj/thumb7.jpg">
+      <publishTime>07/25/2017 15:58:11</publishTime>
+    </File>
+    <File Include="img/res/montaj/thumb8.jpg">
+      <publishTime>07/25/2017 15:58:35</publishTime>
+    </File>
+    <File Include="img/res/news1.png">
+      <publishTime>05/10/2017 16:09:20</publishTime>
+    </File>
+    <File Include="img/res/press1.png">
+      <publishTime>05/10/2017 15:12:15</publishTime>
+    </File>
+    <File Include="img/res/servicesbanner.jpg">
+      <publishTime>08/24/2017 14:48:21</publishTime>
+    </File>
+    <File Include="img/tarihce.png">
+      <publishTime>05/10/2017 14:51:50</publishTime>
+    </File>
+    <File Include="img/tel-icon.png">
+      <publishTime>05/10/2017 15:27:56</publishTime>
+    </File>
+    <File Include="img/uretim-akisi.jpg">
+      <publishTime>07/01/2017 17:11:01</publishTime>
+    </File>
+    <File Include="img/urungruplari.jpg">
+      <publishTime>07/07/2017 15:19:18</publishTime>
+    </File>
+    <File Include="img/vardar-dolomit.png">
+      <publishTime>08/24/2017 15:52:03</publishTime>
+    </File>
+    <File Include="img/yatirimci.jpg">
+      <publishTime>07/13/2017 19:37:25</publishTime>
+    </File>
+    <File Include="img/zoom.png">
+      <publishTime>07/17/2017 16:30:44</publishTime>
+    </File>
+    <File Include="js/bootstrap/css/bootstrap-theme.css">
+      <publishTime>01/04/2014 16:34:00</publishTime>
+    </File>
+    <File Include="js/bootstrap/css/bootstrap-theme.min.css">
+      <publishTime>01/04/2014 16:34:00</publishTime>
+    </File>
+    <File Include="js/bootstrap/css/bootstrap.css">
+      <publishTime>01/04/2014 16:34:00</publishTime>
+    </File>
+    <File Include="js/bootstrap/css/bootstrap.min.css">
+      <publishTime>01/04/2014 16:34:00</publishTime>
+    </File>
+    <File Include="js/bootstrap/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>01/04/2014 16:34:00</publishTime>
+    </File>
+    <File Include="js/bootstrap/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>01/04/2014 16:34:00</publishTime>
+    </File>
+    <File Include="js/bootstrap/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>01/04/2014 16:34:00</publishTime>
+    </File>
+    <File Include="js/bootstrap/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>01/04/2014 16:34:00</publishTime>
+    </File>
+    <File Include="js/bootstrap/js/bootstrap.js">
+      <publishTime>01/04/2014 16:34:00</publishTime>
+    </File>
+    <File Include="js/bootstrap/js/bootstrap.min.js">
+      <publishTime>01/04/2014 16:34:00</publishTime>
+    </File>
+    <File Include="js/featherlight.gallery.min.js">
+      <publishTime>07/12/2017 14:29:32</publishTime>
+    </File>
+    <File Include="js/featherlight.min.js">
+      <publishTime>07/12/2017 16:38:26</publishTime>
+    </File>
+    <File Include="js/jquery-3.2.1.min.js">
+      <publishTime>05/09/2017 19:56:03</publishTime>
+    </File>
+    <File Include="js/jquery.meanmenu.min.js">
+      <publishTime>08/23/2017 13:07:50</publishTime>
+    </File>
+    <File Include="js/jquery.zoom.min.js">
+      <publishTime>04/25/2017 00:28:14</publishTime>
+    </File>
+    <File Include="js/script.js">
+      <publishTime>08/23/2017 13:54:40</publishTime>
+    </File>
+    <File Include="js/summernote/font/summernote.eot">
+      <publishTime>04/01/2017 13:36:48</publishTime>
+    </File>
+    <File Include="js/summernote/font/summernote.ttf">
+      <publishTime>04/01/2017 13:36:48</publishTime>
+    </File>
+    <File Include="js/summernote/font/summernote.woff">
+      <publishTime>04/01/2017 13:36:48</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-ar-AR.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-bg-BG.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-ca-ES.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-cs-CZ.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-da-DK.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-de-DE.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-el-GR.js">
+      <publishTime>04/01/2017 13:36:32</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-es-ES.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-es-EU.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-fa-IR.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-fi-FI.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-fr-FR.js">
+      <publishTime>04/01/2017 13:36:32</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-gl-ES.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-he-IL.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-hr-HR.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-hu-HU.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-id-ID.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-it-IT.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-ja-JP.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-ko-KR.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-lt-LT.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-lt-LV.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-nb-NO.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-nl-NL.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-pl-PL.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-pt-BR.js">
+      <publishTime>04/01/2017 12:20:58</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-pt-PT.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-ro-RO.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-ru-RU.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-sk-SK.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-sl-SI.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-sr-RS-Latin.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-sr-RS.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-sv-SE.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-ta-IN.js">
+      <publishTime>04/01/2017 13:36:32</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-th-TH.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-tr-TR.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-uk-UA.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-vi-VN.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-zh-CN.js">
+      <publishTime>04/01/2017 13:36:32</publishTime>
+    </File>
+    <File Include="js/summernote/lang/summernote-zh-TW.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/plugin/databasic/summernote-ext-databasic.css">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/plugin/databasic/summernote-ext-databasic.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/plugin/hello/summernote-ext-hello.js">
+      <publishTime>12/13/2015 07:01:40</publishTime>
+    </File>
+    <File Include="js/summernote/plugin/specialchars/summernote-ext-specialchars.js">
+      <publishTime>08/07/2016 05:18:02</publishTime>
+    </File>
+    <File Include="js/summernote/summernote.css">
+      <publishTime>04/01/2017 13:43:28</publishTime>
+    </File>
+    <File Include="js/summernote/summernote.js">
+      <publishTime>04/01/2017 13:43:16</publishTime>
+    </File>
+    <File Include="js/summernote/summernote.min.js">
+      <publishTime>04/01/2017 13:43:28</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>05/25/2017 23:20:56</publishTime>
+    </File>
+    <File Include="Views/Admin/App.cshtml">
+      <publishTime>08/04/2017 04:25:00</publishTime>
+    </File>
+    <File Include="Views/Admin/AppList.cshtml">
+      <publishTime>08/04/2017 02:13:32</publishTime>
+    </File>
+    <File Include="Views/Admin/BannerEdit.cshtml">
+      <publishTime>09/05/2017 17:56:43</publishTime>
+    </File>
+    <File Include="Views/Admin/BannerList.cshtml">
+      <publishTime>09/05/2017 17:56:40</publishTime>
+    </File>
+    <File Include="Views/Admin/Catalog.cshtml">
+      <publishTime>09/05/2017 17:56:38</publishTime>
+    </File>
+    <File Include="Views/Admin/CatalogAdd.cshtml">
+      <publishTime>09/05/2017 17:56:35</publishTime>
+    </File>
+    <File Include="Views/Admin/CatalogEdit.cshtml">
+      <publishTime>09/05/2017 17:56:33</publishTime>
+    </File>
+    <File Include="Views/Admin/Catalogs.cshtml">
+      <publishTime>09/05/2017 17:56:31</publishTime>
+    </File>
+    <File Include="Views/Admin/Contact.cshtml">
+      <publishTime>09/05/2017 17:56:29</publishTime>
+    </File>
+    <File Include="Views/Admin/Login.cshtml">
+      <publishTime>05/23/2017 08:18:19</publishTime>
+    </File>
+    <File Include="Views/Admin/Media.cshtml">
+      <publishTime>09/05/2017 17:56:22</publishTime>
+    </File>
+    <File Include="Views/Admin/MediaAdd.cshtml">
+      <publishTime>09/05/2017 17:56:19</publishTime>
+    </File>
+    <File Include="Views/Admin/MediaEdit.cshtml">
+      <publishTime>09/05/2017 17:56:16</publishTime>
+    </File>
+    <File Include="Views/Admin/MediaList.cshtml">
+      <publishTime>09/05/2017 17:56:14</publishTime>
+    </File>
+    <File Include="Views/Admin/News.cshtml">
+      <publishTime>09/05/2017 17:56:11</publishTime>
+    </File>
+    <File Include="Views/Admin/NewsAdd.cshtml">
+      <publishTime>09/05/2017 17:56:06</publishTime>
+    </File>
+    <File Include="Views/Admin/NewsAddImage.cshtml">
+      <publishTime>09/05/2017 17:56:04</publishTime>
+    </File>
+    <File Include="Views/Admin/NewsEdit.cshtml">
+      <publishTime>09/05/2017 17:56:01</publishTime>
+    </File>
+    <File Include="Views/Admin/NewsEditImage.cshtml">
+      <publishTime>09/05/2017 17:55:58</publishTime>
+    </File>
+    <File Include="Views/Admin/NewsList.cshtml">
+      <publishTime>09/05/2017 17:55:55</publishTime>
+    </File>
+    <File Include="Views/Admin/PageAdd.cshtml">
+      <publishTime>09/05/2017 17:55:49</publishTime>
+    </File>
+    <File Include="Views/Admin/PageAddFile.cshtml">
+      <publishTime>09/05/2017 17:55:42</publishTime>
+    </File>
+    <File Include="Views/Admin/PageEdit.cshtml">
+      <publishTime>09/05/2017 17:55:40</publishTime>
+    </File>
+    <File Include="Views/Admin/PageEditFile.cshtml">
+      <publishTime>09/05/2017 17:55:38</publishTime>
+    </File>
+    <File Include="Views/Admin/PageFileList.cshtml">
+      <publishTime>09/05/2017 17:55:36</publishTime>
+    </File>
+    <File Include="Views/Admin/PageList.cshtml">
+      <publishTime>09/05/2017 17:55:34</publishTime>
+    </File>
+    <File Include="Views/Admin/Pages.cshtml">
+      <publishTime>09/05/2017 17:55:31</publishTime>
+    </File>
+    <File Include="Views/Home/basin.cshtml">
+      <publishTime>07/16/2017 20:48:37</publishTime>
+    </File>
+    <File Include="Views/Home/basvuru.cshtml">
+      <publishTime>08/24/2017 02:14:51</publishTime>
+    </File>
+    <File Include="Views/Home/basvuruonay.cshtml">
+      <publishTime>08/22/2017 22:28:49</publishTime>
+    </File>
+    <File Include="Views/Home/catalog.cshtml">
+      <publishTime>08/16/2017 11:12:31</publishTime>
+    </File>
+    <File Include="Views/Home/contact.cshtml">
+      <publishTime>08/25/2017 15:37:27</publishTime>
+    </File>
+    <File Include="Views/Home/haber.cshtml">
+      <publishTime>06/02/2017 05:36:14</publishTime>
+    </File>
+    <File Include="Views/Home/haberler.cshtml">
+      <publishTime>07/14/2017 19:32:38</publishTime>
+    </File>
+    <File Include="Views/Home/hizmetler.cshtml">
+      <publishTime>08/24/2017 14:54:58</publishTime>
+    </File>
+    <File Include="Views/Home/iletisim.cshtml">
+      <publishTime>08/25/2017 15:37:21</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>08/16/2017 11:36:09</publishTime>
+    </File>
+    <File Include="Views/Home/katalog.cshtml">
+      <publishTime>08/16/2017 11:12:23</publishTime>
+    </File>
+    <File Include="Views/Home/msds.cshtml">
+      <publishTime>08/24/2017 02:14:20</publishTime>
+    </File>
+    <File Include="Views/Home/msdsonay.cshtml">
+      <publishTime>08/11/2017 17:38:11</publishTime>
+    </File>
+    <File Include="Views/Home/Navbar.cshtml">
+      <publishTime>08/23/2017 13:48:31</publishTime>
+    </File>
+    <File Include="Views/Home/news.cshtml">
+      <publishTime>07/16/2017 20:44:24</publishTime>
+    </File>
+    <File Include="Views/Home/Page.cshtml">
+      <publishTime>08/24/2017 15:15:00</publishTime>
+    </File>
+    <File Include="Views/Home/press.cshtml">
+      <publishTime>07/16/2017 20:43:04</publishTime>
+    </File>
+    <File Include="Views/Home/sertifikalar.cshtml">
+      <publishTime>07/09/2017 19:13:53</publishTime>
+    </File>
+    <File Include="Views/Home/services.cshtml">
+      <publishTime>08/24/2017 14:54:56</publishTime>
+    </File>
+    <File Include="Views/Home/supplier.cshtml">
+      <publishTime>08/24/2017 02:13:59</publishTime>
+    </File>
+    <File Include="Views/Home/supplieronay.cshtml">
+      <publishTime>08/16/2017 05:31:48</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>05/17/2017 05:25:24</publishTime>
+    </File>
+    <File Include="Views/Shared/_AdminLayout.cshtml">
+      <publishTime>07/14/2017 20:21:45</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>08/28/2017 20:24:25</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>08/29/2017 11:50:55</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>05/17/2017 05:25:24</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/29/2017 13:34:09</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

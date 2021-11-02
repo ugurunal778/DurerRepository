@@ -1,0 +1,12 @@
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Facade\bin\Release\Facade.dll.config
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Facade\bin\Release\Facade.dll
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Facade\bin\Release\Facade.pdb
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Facade\bin\Release\Dto.dll
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Facade\bin\Release\EntityFramework.dll
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Facade\bin\Release\EntityFramework.SqlServer.dll
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Facade\bin\Release\Dto.pdb
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Facade\bin\Release\EntityFramework.xml
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Facade\bin\Release\EntityFramework.SqlServer.xml
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Facade\obj\Release\Facade.csprojResolveAssemblyReference.cache
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Facade\obj\Release\Facade.dll
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Facade\obj\Release\Facade.pdb

@@ -1,0 +1,160 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/reset.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>msds</title>
+    <style>
+        #msds-form {
+            width: 615px;
+            padding-top: 10px;
+            line-height: 28px;
+            font-size: 12px;
+            font-family: Roboto, sans-serif;
+        }
+
+        .msds-row {
+            width: 100%;
+            float: left;
+            margin-bottom: 20px;
+        }
+
+        #msds-form h2 {
+            color: #2263b3;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .row-left {
+            float: left;
+            width: 135px;
+        }
+
+        .row-right {
+            float: right;
+            width: 480px;
+        }
+
+            .row-right input, .row-right textarea {
+                width: 100%;
+                border: 1px solid #d6d6d6;
+                outline: none;
+                box-shadow: 0px 0px 3px #888888;
+            }
+
+        .msds-row input[type="submit"] {
+            width: 100%;
+            color: #fff;
+            background-color: #2263b3;
+            border: none;
+            height: 25px;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .msds-3col input {
+            border: 1px solid #d6d6d6;
+            outline: none;
+            box-shadow: 0px 0px 3px #888888;
+        }
+    </style>
+</head>
+<body>
+    <div id="msds-form">
+        <h2>@durer2.Resource.Resources.SupplierFormUpper</h2>
+        @if (ViewData["success"] != null)
+        {
+            <div class="alert alert-success">
+                @durer2.Resource.Resources.Success
+            </div>
+        }
+        else
+        {
+            <form action="/supplier" method="post">
+                <div class="msds-row">
+                    <div class="row-left">@durer2.Resource.Resources.CompanyName</div>
+                    <div class="row-right">
+                        <input type="text" name="CompanyName" required />
+                    </div>
+                </div>
+                <div class="msds-row">
+                    <div class="row-left">@durer2.Resource.Resources.Address</div>
+                    <div class="row-right">
+                        <input type="text" name="Address" required />
+                    </div>
+                </div>
+                <div class="msds-row msds-3col">
+                    <div style="float: left;width:135px;">@durer2.Resource.Resources.City:</div>
+                    <div style="float: left;"><input type="text" name="City" required style="width: 173px;" /></div>
+                    <div style="float: left; margin-left: 20px;">@durer2.Resource.Resources.ZipCode: <input type="number" name="ZipCode" required style="width: 60px;" /></div>
+                    <div style="float: right;text-align: right;">@durer2.Resource.Resources.Country: <input type="text" name="Country" required style="width: 100px;" /></div>
+                </div>
+                <div class="msds-row msds-3col">
+                    <div style="float:left;width: 135px;">
+                        @durer2.Resource.Resources.Telephone
+                    </div>
+                    <div style="float: left;">
+                        <input type="tel" name="Telephone" required style="width: 173px;" />
+                    </div>
+                    <div style="float: right;">
+                        @durer2.Resource.Resources.Fax
+                        <input type="tel" name="Fax" required style="width: 230px;" />
+                    </div>
+                </div>
+                <div class="msds-row msds-3col">
+                    <div style="float:left;width: 135px;">
+                        @durer2.Resource.Resources.Homepage
+                    </div>
+                    <div style="float: left;">
+                        <input type="tel" name="Homepage" required style="width: 173px;" />
+                    </div>
+                    <div style="float: right;">
+                        @durer2.Resource.Resources.Email
+                        <input type="email" name="EmailComp" required style="width: 230px;" />
+                    </div>
+                </div>
+                <div class="msds-row">
+                    <div class="row-left">@durer2.Resource.Resources.ContactPerson</div>
+                    <div class="row-right">
+                        <input type="text" name="ContactPerson" required />
+                    </div>
+                </div>
+                <div class="msds-row">
+                    <div class="row-left">@durer2.Resource.Resources.Title</div>
+                    <div class="row-right">
+                        <input type="text" name="Title" required />
+                    </div>
+                </div>
+                <div class="msds-row">
+                    <div class="row-left">@durer2.Resource.Resources.Email</div>
+                    <div class="row-right">
+                        <input type="email" name="Email" required />
+                    </div>
+                </div>
+                <div class="msds-row">
+                    <div class="row-left">@durer2.Resource.Resources.Message</div>
+                    <div class="row-right">
+                        <textarea rows="3" name="Message" required style="width: 99%"></textarea>
+                    </div>
+                </div>
+                <div class="msds-row">
+                    <div class="row-left"></div>
+                    <div class="row-right">
+                        <input type="submit" value="@durer2.Resource.Resources.Send" />
+                    </div>
+                </div>
+            </form>
+        }
+
+    </div>
+</body>
+</html>

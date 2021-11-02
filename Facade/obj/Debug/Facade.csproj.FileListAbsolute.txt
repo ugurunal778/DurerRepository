@@ -1,0 +1,54 @@
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Facade\obj\Debug\Facade.csprojResolveAssemblyReference.cache
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Facade\bin\Debug\Facade.dll.config
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Facade\bin\Debug\Facade.dll
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Facade\bin\Debug\Facade.pdb
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Facade\bin\Debug\Dto.dll
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Facade\bin\Debug\EntityFramework.dll
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Facade\bin\Debug\EntityFramework.SqlServer.dll
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Facade\bin\Debug\Dto.pdb
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Facade\bin\Debug\EntityFramework.xml
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Facade\bin\Debug\EntityFramework.SqlServer.xml
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Facade\obj\Debug\Facade.dll
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Facade\obj\Debug\Facade.pdb
+D:\Users\euykan\Desktop\Projeler\Solutions\durer2\Facade\bin\Debug\Facade.dll.config
+D:\Users\euykan\Desktop\Projeler\Solutions\durer2\Facade\bin\Debug\Facade.dll
+D:\Users\euykan\Desktop\Projeler\Solutions\durer2\Facade\bin\Debug\Facade.pdb
+D:\Users\euykan\Desktop\Projeler\Solutions\durer2\Facade\bin\Debug\Dto.dll
+D:\Users\euykan\Desktop\Projeler\Solutions\durer2\Facade\bin\Debug\EntityFramework.dll
+D:\Users\euykan\Desktop\Projeler\Solutions\durer2\Facade\bin\Debug\EntityFramework.SqlServer.dll
+D:\Users\euykan\Desktop\Projeler\Solutions\durer2\Facade\bin\Debug\Dto.pdb
+D:\Users\euykan\Desktop\Projeler\Solutions\durer2\Facade\bin\Debug\EntityFramework.xml
+D:\Users\euykan\Desktop\Projeler\Solutions\durer2\Facade\bin\Debug\EntityFramework.SqlServer.xml
+D:\Users\euykan\Desktop\Projeler\Solutions\durer2\Facade\obj\Debug\Facade.csprojAssemblyReference.cache
+D:\Users\euykan\Desktop\Projeler\Solutions\durer2\Facade\obj\Debug\Facade.csproj.CoreCompileInputs.cache
+D:\Users\euykan\Desktop\Projeler\Solutions\durer2\Facade\obj\Debug\Facade.csproj.CopyComplete
+D:\Users\euykan\Desktop\Projeler\Solutions\durer2\Facade\obj\Debug\Facade.dll
+D:\Users\euykan\Desktop\Projeler\Solutions\durer2\Facade\obj\Debug\Facade.pdb
+D:\Users\euykan\Desktop\Projeler\Solutions\HaznedarDurer\Facade\obj\Debug\Facade.csprojAssemblyReference.cache
+D:\Users\euykan\Desktop\Projeler\Solutions\HaznedarDurer\Facade\obj\Debug\Facade.csproj.CoreCompileInputs.cache
+D:\Users\euykan\Desktop\Projeler\Solutions\HaznedarDurer\Facade\obj\Debug\Facade.dll
+D:\Users\euykan\Desktop\Projeler\Solutions\HaznedarDurer\Facade\obj\Debug\Facade.pdb
+D:\Users\euykan\Desktop\Projeler\Solutions\HaznedarDurer\Facade\bin\Debug\Facade.dll.config
+D:\Users\euykan\Desktop\Projeler\Solutions\HaznedarDurer\Facade\bin\Debug\Facade.dll
+D:\Users\euykan\Desktop\Projeler\Solutions\HaznedarDurer\Facade\bin\Debug\Facade.pdb
+D:\Users\euykan\Desktop\Projeler\Solutions\HaznedarDurer\Facade\bin\Debug\Dto.dll
+D:\Users\euykan\Desktop\Projeler\Solutions\HaznedarDurer\Facade\bin\Debug\EntityFramework.dll
+D:\Users\euykan\Desktop\Projeler\Solutions\HaznedarDurer\Facade\bin\Debug\EntityFramework.SqlServer.dll
+D:\Users\euykan\Desktop\Projeler\Solutions\HaznedarDurer\Facade\bin\Debug\Dto.pdb
+D:\Users\euykan\Desktop\Projeler\Solutions\HaznedarDurer\Facade\bin\Debug\EntityFramework.xml
+D:\Users\euykan\Desktop\Projeler\Solutions\HaznedarDurer\Facade\bin\Debug\EntityFramework.SqlServer.xml
+D:\Users\euykan\Desktop\Projeler\Solutions\HaznedarDurer\Facade\obj\Debug\Facade.csproj.CopyComplete
+F:\İndirilenler\HaznedarDurer\HaznedarDurer\Facade\obj\Debug\Facade.csproj.AssemblyReference.cache
+F:\İndirilenler\HaznedarDurer\HaznedarDurer\Facade\obj\Debug\Facade.csproj.CoreCompileInputs.cache
+F:\İndirilenler\HaznedarDurer\HaznedarDurer\Facade\obj\Debug\Facade.dll
+F:\İndirilenler\HaznedarDurer\HaznedarDurer\Facade\obj\Debug\Facade.pdb
+F:\İndirilenler\HaznedarDurer\HaznedarDurer\Facade\bin\Debug\Facade.dll.config
+F:\İndirilenler\HaznedarDurer\HaznedarDurer\Facade\bin\Debug\Facade.dll
+F:\İndirilenler\HaznedarDurer\HaznedarDurer\Facade\bin\Debug\Facade.pdb
+F:\İndirilenler\HaznedarDurer\HaznedarDurer\Facade\bin\Debug\Dto.dll
+F:\İndirilenler\HaznedarDurer\HaznedarDurer\Facade\bin\Debug\EntityFramework.dll
+F:\İndirilenler\HaznedarDurer\HaznedarDurer\Facade\bin\Debug\EntityFramework.SqlServer.dll
+F:\İndirilenler\HaznedarDurer\HaznedarDurer\Facade\bin\Debug\Dto.pdb
+F:\İndirilenler\HaznedarDurer\HaznedarDurer\Facade\bin\Debug\EntityFramework.xml
+F:\İndirilenler\HaznedarDurer\HaznedarDurer\Facade\bin\Debug\EntityFramework.SqlServer.xml
+F:\İndirilenler\HaznedarDurer\HaznedarDurer\Facade\obj\Debug\Facade.csproj.CopyComplete

@@ -1,0 +1,34 @@
+﻿@model IList<Dto.ContentDto>
+@{
+    ViewBag.Title = "DURER - "+durer2.Resource.Resources.CatalogUpper;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var pageLinks = ViewBag.pageLinks;
+}
+<div class="content-wrapper">
+    <div class="banner">
+        <img src="@Url.Content(ViewBag.Banner)" />
+    </div>
+    <div class="sub-links">
+        <ul>
+            @foreach (var item in pageLinks)
+            {
+                <li>
+                    @Html.ActionLink((string)item.Title, "Page", "Home", new { permalink = item.Permalink }, null)
+                </li>
+            }
+            <li class="selected"><a href="@durer2.Resource.Resources.CatalogUrl">@durer2.Resource.Resources.CatalogUpper</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="catalogs">
+            @foreach (var item in Model)
+            {
+                <a href="@Url.Content(item.FileUrl)" target="_blank">
+                    <img src="@Url.Content(item.ImageUrl)">
+                    <span>@item.FileTitle</span>
+                </a>
+            }
+        </div>
+    </div>
+</div>
+

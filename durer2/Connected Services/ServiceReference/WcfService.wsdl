@@ -1,0 +1,1084 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WcfService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:60841/WcfService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:60841/WcfService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:60841/WcfService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Dto" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWcfService_GetAllByCategoryIdContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllByCategoryIdContent" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetAllByCategoryIdContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllByCategoryIdContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateActiveContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateActiveContent" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateActiveContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateActiveContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_DeleteItemContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteItemContent" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_DeleteItemContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteItemContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateOrderContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderContent" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateOrderContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_CreateContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateContent" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_CreateContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetMaxOrderContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxOrderContent" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetMaxOrderContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxOrderContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetLocalesByContentIdContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocalesByContentIdContent" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetLocalesByContentIdContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocalesByContentIdContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateContent" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetLocaleByIdContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocaleByIdContent" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetLocaleByIdContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocaleByIdContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetBannerLocaleByIdContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBannerLocaleByIdContent" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetBannerLocaleByIdContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBannerLocaleByIdContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetBannerLocaleByContentIdContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBannerLocaleByContentIdContent" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetBannerLocaleByContentIdContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBannerLocaleByContentIdContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetBannerLocalesByIdContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBannerLocalesByIdContent" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetBannerLocalesByIdContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBannerLocalesByIdContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateBannerContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBannerContent" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateBannerContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBannerContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetAllNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllNews" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetAllNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetAllImagesNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllImagesNews" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetAllImagesNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllImagesNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateActiveNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateActiveNews" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateActiveNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateActiveNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateOrderNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderNews" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateOrderNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetMaxOrderNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxOrderNews" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetMaxOrderNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxOrderNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_DeleteItemNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteItemNews" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_DeleteItemNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteItemNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetLocalesByIdNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocalesByIdNews" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetLocalesByIdNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocalesByIdNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetLocaleByIdNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocaleByIdNews" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetLocaleByIdNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocaleByIdNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNews" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_CreateNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNews" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_CreateNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetByIdNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIdNews" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetByIdNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIdNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetImagesByIdNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImagesByIdNews" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetImagesByIdNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImagesByIdNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetImageByIdNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImageByIdNews" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetImageByIdNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImageByIdNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_CreateImageNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateImageNews" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_CreateImageNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateImageNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_DeleteImageNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteImageNews" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_DeleteImageNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteImageNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateImageNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateImageNews" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateImageNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateImageNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetAllByParentIdPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllByParentIdPage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetAllByParentIdPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllByParentIdPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetLocalesByPageIdPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocalesByPageIdPage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetLocalesByPageIdPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocalesByPageIdPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetProductsPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsPage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetProductsPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetLocaleByIdPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocaleByIdPage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetLocaleByIdPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocaleByIdPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdatePage_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdatePage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetByPermalinkPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetByPermalinkPage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetByPermalinkPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetByPermalinkPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetOtherCulturePermalinkPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtherCulturePermalinkPage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetOtherCulturePermalinkPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtherCulturePermalinkPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetFirstByParentIdPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFirstByParentIdPage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetFirstByParentIdPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFirstByParentIdPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetByIdPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIdPage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetByIdPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIdPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetPageLinksByParentIdPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPageLinksByParentIdPage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetPageLinksByParentIdPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPageLinksByParentIdPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_hasSubLinksPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:hasSubLinksPage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_hasSubLinksPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:hasSubLinksPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetMaxOrderPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxOrderPage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetMaxOrderPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxOrderPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetMaxFileOrderPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxFileOrderPage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetMaxFileOrderPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxFileOrderPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_RemoveAccentPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAccentPage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_RemoveAccentPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAccentPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_CreatePage_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_CreatePage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateActivePage_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateActivePage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateActivePage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateActivePageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_DeleteItemPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteItemPage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_DeleteItemPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteItemPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateOrderPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderPage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateOrderPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetFilesByIdPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilesByIdPage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetFilesByIdPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilesByIdPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateFileOrderPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFileOrderPage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateFileOrderPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFileOrderPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_DeleteFilePage_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFilePage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_DeleteFilePage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFilePageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_CreateFilePage_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateFilePage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_CreateFilePage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateFilePageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetFileLocalesByIdPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileLocalesByIdPage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetFileLocalesByIdPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileLocalesByIdPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateFilePage_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFilePage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateFilePage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFilePageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetFileLocaleByIdPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileLocaleByIdPage" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetFileLocaleByIdPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileLocaleByIdPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_SendMail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMail" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_SendMail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_CheckLoginUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckLoginUser" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_CheckLoginUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckLoginUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWcfService">
+    <wsdl:operation name="GetAllByCategoryIdContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentFacade/GetAllByCategoryIdContent" message="tns:IWcfService_GetAllByCategoryIdContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentFacade/GetAllByCategoryIdContentResponse" message="tns:IWcfService_GetAllByCategoryIdContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActiveContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentFacade/UpdateActiveContent" message="tns:IWcfService_UpdateActiveContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentFacade/UpdateActiveContentResponse" message="tns:IWcfService_UpdateActiveContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteItemContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentFacade/DeleteItemContent" message="tns:IWcfService_DeleteItemContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentFacade/DeleteItemContentResponse" message="tns:IWcfService_DeleteItemContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentFacade/UpdateOrderContent" message="tns:IWcfService_UpdateOrderContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentFacade/UpdateOrderContentResponse" message="tns:IWcfService_UpdateOrderContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentFacade/CreateContent" message="tns:IWcfService_CreateContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentFacade/CreateContentResponse" message="tns:IWcfService_CreateContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxOrderContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentFacade/GetMaxOrderContent" message="tns:IWcfService_GetMaxOrderContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentFacade/GetMaxOrderContentResponse" message="tns:IWcfService_GetMaxOrderContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocalesByContentIdContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentFacade/GetLocalesByContentIdContent" message="tns:IWcfService_GetLocalesByContentIdContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentFacade/GetLocalesByContentIdContentResponse" message="tns:IWcfService_GetLocalesByContentIdContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentFacade/UpdateContent" message="tns:IWcfService_UpdateContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentFacade/UpdateContentResponse" message="tns:IWcfService_UpdateContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocaleByIdContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentFacade/GetLocaleByIdContent" message="tns:IWcfService_GetLocaleByIdContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentFacade/GetLocaleByIdContentResponse" message="tns:IWcfService_GetLocaleByIdContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBannerLocaleByIdContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentFacade/GetBannerLocaleByIdContent" message="tns:IWcfService_GetBannerLocaleByIdContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentFacade/GetBannerLocaleByIdContentResponse" message="tns:IWcfService_GetBannerLocaleByIdContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBannerLocaleByContentIdContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentFacade/GetBannerLocaleByContentIdContent" message="tns:IWcfService_GetBannerLocaleByContentIdContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentFacade/GetBannerLocaleByContentIdContentResponse" message="tns:IWcfService_GetBannerLocaleByContentIdContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBannerLocalesByIdContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentFacade/GetBannerLocalesByIdContent" message="tns:IWcfService_GetBannerLocalesByIdContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentFacade/GetBannerLocalesByIdContentResponse" message="tns:IWcfService_GetBannerLocalesByIdContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBannerContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentFacade/UpdateBannerContent" message="tns:IWcfService_UpdateBannerContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentFacade/UpdateBannerContentResponse" message="tns:IWcfService_UpdateBannerContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllNews">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewsFacade/GetAllNews" message="tns:IWcfService_GetAllNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewsFacade/GetAllNewsResponse" message="tns:IWcfService_GetAllNews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllImagesNews">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewsFacade/GetAllImagesNews" message="tns:IWcfService_GetAllImagesNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewsFacade/GetAllImagesNewsResponse" message="tns:IWcfService_GetAllImagesNews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActiveNews">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewsFacade/UpdateActiveNews" message="tns:IWcfService_UpdateActiveNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewsFacade/UpdateActiveNewsResponse" message="tns:IWcfService_UpdateActiveNews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderNews">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewsFacade/UpdateOrderNews" message="tns:IWcfService_UpdateOrderNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewsFacade/UpdateOrderNewsResponse" message="tns:IWcfService_UpdateOrderNews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxOrderNews">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewsFacade/GetMaxOrderNews" message="tns:IWcfService_GetMaxOrderNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewsFacade/GetMaxOrderNewsResponse" message="tns:IWcfService_GetMaxOrderNews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteItemNews">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewsFacade/DeleteItemNews" message="tns:IWcfService_DeleteItemNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewsFacade/DeleteItemNewsResponse" message="tns:IWcfService_DeleteItemNews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocalesByIdNews">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewsFacade/GetLocalesByIdNews" message="tns:IWcfService_GetLocalesByIdNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewsFacade/GetLocalesByIdNewsResponse" message="tns:IWcfService_GetLocalesByIdNews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocaleByIdNews">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewsFacade/GetLocaleByIdNews" message="tns:IWcfService_GetLocaleByIdNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewsFacade/GetLocaleByIdNewsResponse" message="tns:IWcfService_GetLocaleByIdNews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNews">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewsFacade/UpdateNews" message="tns:IWcfService_UpdateNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewsFacade/UpdateNewsResponse" message="tns:IWcfService_UpdateNews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNews">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewsFacade/CreateNews" message="tns:IWcfService_CreateNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewsFacade/CreateNewsResponse" message="tns:IWcfService_CreateNews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByIdNews">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewsFacade/GetByIdNews" message="tns:IWcfService_GetByIdNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewsFacade/GetByIdNewsResponse" message="tns:IWcfService_GetByIdNews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImagesByIdNews">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewsFacade/GetImagesByIdNews" message="tns:IWcfService_GetImagesByIdNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewsFacade/GetImagesByIdNewsResponse" message="tns:IWcfService_GetImagesByIdNews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImageByIdNews">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewsFacade/GetImageByIdNews" message="tns:IWcfService_GetImageByIdNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewsFacade/GetImageByIdNewsResponse" message="tns:IWcfService_GetImageByIdNews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateImageNews">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewsFacade/CreateImageNews" message="tns:IWcfService_CreateImageNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewsFacade/CreateImageNewsResponse" message="tns:IWcfService_CreateImageNews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteImageNews">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewsFacade/DeleteImageNews" message="tns:IWcfService_DeleteImageNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewsFacade/DeleteImageNewsResponse" message="tns:IWcfService_DeleteImageNews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateImageNews">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewsFacade/UpdateImageNews" message="tns:IWcfService_UpdateImageNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewsFacade/UpdateImageNewsResponse" message="tns:IWcfService_UpdateImageNews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllByParentIdPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/GetAllByParentIdPage" message="tns:IWcfService_GetAllByParentIdPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/GetAllByParentIdPageResponse" message="tns:IWcfService_GetAllByParentIdPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocalesByPageIdPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/GetLocalesByPageIdPage" message="tns:IWcfService_GetLocalesByPageIdPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/GetLocalesByPageIdPageResponse" message="tns:IWcfService_GetLocalesByPageIdPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/GetProductsPage" message="tns:IWcfService_GetProductsPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/GetProductsPageResponse" message="tns:IWcfService_GetProductsPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocaleByIdPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/GetLocaleByIdPage" message="tns:IWcfService_GetLocaleByIdPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/GetLocaleByIdPageResponse" message="tns:IWcfService_GetLocaleByIdPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/UpdatePage" message="tns:IWcfService_UpdatePage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/UpdatePageResponse" message="tns:IWcfService_UpdatePage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByPermalinkPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/GetByPermalinkPage" message="tns:IWcfService_GetByPermalinkPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/GetByPermalinkPageResponse" message="tns:IWcfService_GetByPermalinkPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOtherCulturePermalinkPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/GetOtherCulturePermalinkPage" message="tns:IWcfService_GetOtherCulturePermalinkPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/GetOtherCulturePermalinkPageResponse" message="tns:IWcfService_GetOtherCulturePermalinkPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstByParentIdPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/GetFirstByParentIdPage" message="tns:IWcfService_GetFirstByParentIdPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/GetFirstByParentIdPageResponse" message="tns:IWcfService_GetFirstByParentIdPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByIdPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/GetByIdPage" message="tns:IWcfService_GetByIdPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/GetByIdPageResponse" message="tns:IWcfService_GetByIdPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPageLinksByParentIdPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/GetPageLinksByParentIdPage" message="tns:IWcfService_GetPageLinksByParentIdPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/GetPageLinksByParentIdPageResponse" message="tns:IWcfService_GetPageLinksByParentIdPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="hasSubLinksPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/hasSubLinksPage" message="tns:IWcfService_hasSubLinksPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/hasSubLinksPageResponse" message="tns:IWcfService_hasSubLinksPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxOrderPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/GetMaxOrderPage" message="tns:IWcfService_GetMaxOrderPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/GetMaxOrderPageResponse" message="tns:IWcfService_GetMaxOrderPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxFileOrderPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/GetMaxFileOrderPage" message="tns:IWcfService_GetMaxFileOrderPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/GetMaxFileOrderPageResponse" message="tns:IWcfService_GetMaxFileOrderPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAccentPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/RemoveAccentPage" message="tns:IWcfService_RemoveAccentPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/RemoveAccentPageResponse" message="tns:IWcfService_RemoveAccentPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/CreatePage" message="tns:IWcfService_CreatePage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/CreatePageResponse" message="tns:IWcfService_CreatePage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActivePage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/UpdateActivePage" message="tns:IWcfService_UpdateActivePage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/UpdateActivePageResponse" message="tns:IWcfService_UpdateActivePage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteItemPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/DeleteItemPage" message="tns:IWcfService_DeleteItemPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/DeleteItemPageResponse" message="tns:IWcfService_DeleteItemPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/UpdateOrderPage" message="tns:IWcfService_UpdateOrderPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/UpdateOrderPageResponse" message="tns:IWcfService_UpdateOrderPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilesByIdPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/GetFilesByIdPage" message="tns:IWcfService_GetFilesByIdPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/GetFilesByIdPageResponse" message="tns:IWcfService_GetFilesByIdPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFileOrderPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/UpdateFileOrderPage" message="tns:IWcfService_UpdateFileOrderPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/UpdateFileOrderPageResponse" message="tns:IWcfService_UpdateFileOrderPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFilePage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/DeleteFilePage" message="tns:IWcfService_DeleteFilePage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/DeleteFilePageResponse" message="tns:IWcfService_DeleteFilePage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateFilePage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/CreateFilePage" message="tns:IWcfService_CreateFilePage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/CreateFilePageResponse" message="tns:IWcfService_CreateFilePage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileLocalesByIdPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/GetFileLocalesByIdPage" message="tns:IWcfService_GetFileLocalesByIdPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/GetFileLocalesByIdPageResponse" message="tns:IWcfService_GetFileLocalesByIdPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFilePage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/UpdateFilePage" message="tns:IWcfService_UpdateFilePage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/UpdateFilePageResponse" message="tns:IWcfService_UpdateFilePage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileLocaleByIdPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPageFacade/GetFileLocaleByIdPage" message="tns:IWcfService_GetFileLocaleByIdPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPageFacade/GetFileLocaleByIdPageResponse" message="tns:IWcfService_GetFileLocaleByIdPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMailFacade/SendMail" message="tns:IWcfService_SendMail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMailFacade/SendMailResponse" message="tns:IWcfService_SendMail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckLoginUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserFacade/CheckLoginUser" message="tns:IWcfService_CheckLoginUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserFacade/CheckLoginUserResponse" message="tns:IWcfService_CheckLoginUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWcfService" type="tns:IWcfService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllByCategoryIdContent">
+      <soap:operation soapAction="http://tempuri.org/IContentFacade/GetAllByCategoryIdContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActiveContent">
+      <soap:operation soapAction="http://tempuri.org/IContentFacade/UpdateActiveContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteItemContent">
+      <soap:operation soapAction="http://tempuri.org/IContentFacade/DeleteItemContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderContent">
+      <soap:operation soapAction="http://tempuri.org/IContentFacade/UpdateOrderContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateContent">
+      <soap:operation soapAction="http://tempuri.org/IContentFacade/CreateContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxOrderContent">
+      <soap:operation soapAction="http://tempuri.org/IContentFacade/GetMaxOrderContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocalesByContentIdContent">
+      <soap:operation soapAction="http://tempuri.org/IContentFacade/GetLocalesByContentIdContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContent">
+      <soap:operation soapAction="http://tempuri.org/IContentFacade/UpdateContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocaleByIdContent">
+      <soap:operation soapAction="http://tempuri.org/IContentFacade/GetLocaleByIdContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBannerLocaleByIdContent">
+      <soap:operation soapAction="http://tempuri.org/IContentFacade/GetBannerLocaleByIdContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBannerLocaleByContentIdContent">
+      <soap:operation soapAction="http://tempuri.org/IContentFacade/GetBannerLocaleByContentIdContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBannerLocalesByIdContent">
+      <soap:operation soapAction="http://tempuri.org/IContentFacade/GetBannerLocalesByIdContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBannerContent">
+      <soap:operation soapAction="http://tempuri.org/IContentFacade/UpdateBannerContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllNews">
+      <soap:operation soapAction="http://tempuri.org/INewsFacade/GetAllNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllImagesNews">
+      <soap:operation soapAction="http://tempuri.org/INewsFacade/GetAllImagesNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActiveNews">
+      <soap:operation soapAction="http://tempuri.org/INewsFacade/UpdateActiveNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderNews">
+      <soap:operation soapAction="http://tempuri.org/INewsFacade/UpdateOrderNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxOrderNews">
+      <soap:operation soapAction="http://tempuri.org/INewsFacade/GetMaxOrderNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteItemNews">
+      <soap:operation soapAction="http://tempuri.org/INewsFacade/DeleteItemNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocalesByIdNews">
+      <soap:operation soapAction="http://tempuri.org/INewsFacade/GetLocalesByIdNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocaleByIdNews">
+      <soap:operation soapAction="http://tempuri.org/INewsFacade/GetLocaleByIdNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNews">
+      <soap:operation soapAction="http://tempuri.org/INewsFacade/UpdateNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNews">
+      <soap:operation soapAction="http://tempuri.org/INewsFacade/CreateNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByIdNews">
+      <soap:operation soapAction="http://tempuri.org/INewsFacade/GetByIdNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImagesByIdNews">
+      <soap:operation soapAction="http://tempuri.org/INewsFacade/GetImagesByIdNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImageByIdNews">
+      <soap:operation soapAction="http://tempuri.org/INewsFacade/GetImageByIdNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateImageNews">
+      <soap:operation soapAction="http://tempuri.org/INewsFacade/CreateImageNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteImageNews">
+      <soap:operation soapAction="http://tempuri.org/INewsFacade/DeleteImageNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateImageNews">
+      <soap:operation soapAction="http://tempuri.org/INewsFacade/UpdateImageNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllByParentIdPage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/GetAllByParentIdPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocalesByPageIdPage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/GetLocalesByPageIdPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsPage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/GetProductsPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocaleByIdPage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/GetLocaleByIdPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/UpdatePage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByPermalinkPage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/GetByPermalinkPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOtherCulturePermalinkPage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/GetOtherCulturePermalinkPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstByParentIdPage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/GetFirstByParentIdPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByIdPage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/GetByIdPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPageLinksByParentIdPage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/GetPageLinksByParentIdPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hasSubLinksPage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/hasSubLinksPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxOrderPage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/GetMaxOrderPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxFileOrderPage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/GetMaxFileOrderPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAccentPage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/RemoveAccentPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/CreatePage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActivePage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/UpdateActivePage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteItemPage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/DeleteItemPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderPage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/UpdateOrderPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilesByIdPage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/GetFilesByIdPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFileOrderPage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/UpdateFileOrderPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFilePage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/DeleteFilePage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFilePage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/CreateFilePage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileLocalesByIdPage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/GetFileLocalesByIdPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFilePage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/UpdateFilePage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileLocaleByIdPage">
+      <soap:operation soapAction="http://tempuri.org/IPageFacade/GetFileLocaleByIdPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMail">
+      <soap:operation soapAction="http://tempuri.org/IMailFacade/SendMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLoginUser">
+      <soap:operation soapAction="http://tempuri.org/IUserFacade/CheckLoginUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WcfService">
+    <wsdl:port name="BasicHttpBinding_IWcfService" binding="tns:BasicHttpBinding_IWcfService">
+      <soap:address location="http://localhost:60841/WcfService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

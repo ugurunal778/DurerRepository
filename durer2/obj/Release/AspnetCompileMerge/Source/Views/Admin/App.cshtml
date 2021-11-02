@@ -1,0 +1,39 @@
+﻿@model Dto.ApplicationDto
+@{
+    ViewBag.Title = Model.Form.ToUpper()+" DETAYLARI";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-content">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="sidebar content-box" style="display: block;">
+                <ul class="nav">
+                    <li><a href="/Admin/Pages/28"><i class="glyphicon glyphicon-file"></i> Sayfa Yönetimi</a></li>
+                    <li><a href="/Admin/News"><i class="glyphicon glyphicon-bullhorn"></i> Haber Yönetimi</a></li>
+                    <li><a href="/Admin/Contact"><i class="glyphicon glyphicon-info-sign"></i> İletişim Bilgileri</a></li>
+                    <li class="current"><a href="/Admin/AppList"><i class="glyphicon glyphicon-ok"></i> Başvurular</a></li>
+                    <li><a href="/Admin/MediaList"><i class="glyphicon glyphicon-globe"></i> Basın</a></li>
+                    <li><a href="/Admin/Catalogs"><i class="glyphicon glyphicon-certificate"></i> Kataloglar</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="content-box-header">
+                                <div class="panel-title">@Model.Form Detayları</div>
+                            </div>
+                            <div class="content-box-large box-with-header">
+                                <b>@Model.CreateDate.ToString("dd MMMM yyyy, HH:mm")</b><br /><br />
+                                @Html.Raw(Model.HTML)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

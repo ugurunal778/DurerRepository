@@ -1,0 +1,184 @@
+﻿@using System.Text.RegularExpressions;
+@model Dto.PageDto
+@{
+    ViewBag.Title = "DURER - "+Model.Title;
+    var pageLinks = ViewBag.pageLinks;
+    var pageSubLinks= ViewBag.pageSubLinks;
+}
+
+<div class="content-wrapper">
+    <div class="banner">
+        <img src="@Url.Content(Model.ImageUrl)" />
+    </div>
+    <div class="sub-links">
+        <ul>
+            @foreach (var item in pageLinks)
+            {
+                <li @(ViewContext.RouteData.Values["permalink"].ToString() == item.Permalink || item.Permalink == ViewBag.permalink ? " class=selected":"")>
+                    @Html.ActionLink((string)item.Title, "Page", "Home", new { permalink = item.Permalink }, null)
+                    @if (pageSubLinks!=null && item.Permalink==ViewBag.permalink)
+                    {
+                        foreach (var subItem in pageSubLinks)
+                        { 
+                            <ul>
+                                <li @(ViewContext.RouteData.Values["permalink"].ToString() == subItem.Permalink ? " class=selected" : "")>
+                                    @Html.ActionLink((string)subItem.Title, "Page", "Home", new { permalink = subItem.Permalink, isSub=true }, null)
+                                </li>
+                            </ul>
+                        }
+                    }
+                </li>
+            }
+            @if (new[] { 28, 34, 35, 36, 37, 38, 40, 242 }.Contains(Model.ParentId))
+            {
+                <li><a href="@durer2.Resource.Resources.NewsUrl">@durer2.Resource.Resources.NewsUpper</a></li>
+                <li><a href="@durer2.Resource.Resources.PressUrl">@durer2.Resource.Resources.PressUpper</a></li>
+            }
+            @if (new[] { 51, 52, 53, 54, 76, 77, 78 }.Contains(Model.ParentId) || new [] { 51, 52, 76, 77, 78}.Contains(Model.Id))
+            {
+                <li><a href="@durer2.Resource.Resources.CatalogUrl">@durer2.Resource.Resources.CatalogUpper</a></li>
+            }
+        </ul>
+    </div>
+    <div class="content @(new[] { 52 }.Contains(Model.ParentId) || new[] { 52 }.Contains(Model.Id) ? "products" : "")">
+        @if (Model.ParentId == 242)
+        {
+            <b style="display: block;margin-bottom: 10px;">@Model.Title</b>
+            @Html.Raw(Model.Content)
+            if (ViewBag.pageFiles.Count > 0)
+            {
+                foreach (var item in ViewBag.pageFiles)
+                {
+                    <a href="@Url.Content(item.FileUrl)" target="_blank" class="pdf-link">@item.Title</a>
+                }
+                <div style="margin-bottom: 20px;"></div>
+            }
+        }
+        else if (Model.Id == 34)
+        {
+            @Html.Raw(Model.Content)
+            if (ViewBag.pageFiles.Count > 0)
+            {
+                foreach (var item in ViewBag.pageFiles)
+                {
+                    <a href="@Url.Content(item.FileUrl)" target="_blank" class="pdf-link">@item.Title</a>
+                }
+            }
+        }
+        else
+        {
+            if (ViewBag.pageFiles.Count > 0)
+            {
+                foreach (var item in ViewBag.pageFiles)
+                {
+                    <a href="@Url.Content(item.FileUrl)" target="_blank" class="pdf-link">@item.Title</a>
+                }
+                <div style="margin-bottom: 20px;"></div>
+            }
+            if (new[] { 35, 62, 63 }.Contains(Model.Id) || new[] { 51 }.Contains(Model.ParentId) || new[] { 51 }.Contains(Model.Id))
+            {
+                if (Model.ParentId == 51)
+                {
+                    <a href="~/msds" class="msds" data-featherlight="iframe" data-featherlight-iframe-height="475" data-featherlight-iframe-width="500">@durer2.Resource.Resources.RequestFormUpper</a>
+                }
+                if (Model.Content != null)
+                {
+                    string pattern = @"<img.*?src=""(?<url>.*?)"".*?>";
+                    Regex rx = new Regex(pattern);
+                    foreach (Match m in rx.Matches(Model.Content))
+                    {
+                        if (Model.Id == 62 || new[] { 51 }.Contains(Model.ParentId) || new[] { 51 }.Contains(Model.Id))
+                        {
+                            <a href="#" alt="@Model.Title.ToLower()" data-featherlight='<img src="@m.Groups["url"].Value" class="featherlight-image" />' class="zoom"><img src="~/img/zoom.png" /></a>
+                        }
+                        else
+                        {
+                            <a href="#" alt="@Model.Title.ToLower()" data-featherlight='<img src="@m.Groups["url"].Value" class="featherlight-image" id="zoom-image" />' class="zoom"><img src="~/img/zoom.png" /></a>
+                        }
+                    }
+                }
+            }
+            @Html.Raw(Model.Content)
+            if (Model.Title == "DEMİR ÇELİK SEKTÖRÜ")
+            {
+                <div class="imageMap">
+                    <img src="~/img/res/demircelik/schemabluetr.png" />
+                    <a href="#" alt="Yüksek Fırın" data-featherlight="<img src=&quot;/img/res/demircelik/yf.jpg&quot; class=&quot;featherlight-image iron-steel&quot; />" style="top: 28%;left: 5%;">• Yüksek Fırın</a>
+                    <a href="#" alt="Yüksek Fırın Sobası" data-featherlight="<img src=&quot;/img/res/demircelik/yfsobasi.jpg&quot; class=&quot;featherlight-image iron-steel&quot; />" style="top: 38%;left: 3%;">• Yüksek Fırın Sobası</a>
+                    <a href="#" alt="Pik Demir Taşıma Gemisi Torpido Arabası" data-featherlight="<img src=&quot;/img/res/demircelik/pik.jpg&quot; class=&quot;featherlight-image iron-steel&quot; />" style="top: 48%;left: 1%;">• Pik Demir Taşıma Gemisi Torpido Arabası</a>
+                    <a href="#" alt="BOF Konverter" data-featherlight="<img src=&quot;/img/res/demircelik/bof.jpg&quot; class=&quot;featherlight-image iron-steel&quot; />" style="top: 58%;left: 3%;">• BOF Konverter</a>
+                    <a href=".combustion1" alt="Yanma Odası" class="combustion-chamber" style="top: 68%;left: 5%;">• Yanma Odası</a>
+                    <div class="combustion1">
+                        <img src="/img/res/demircelik/yanmaoda.jpg" class="featherlight-image iron-steel">
+                    </div>
+                    <a href=".combustion2" alt="Yanma Odası" class="combustion-chamber"></a>
+                    <div class="combustion2">
+                        <img src="/img/res/demircelik/yanmaoda2.jpg" class="featherlight-image iron-steel">
+                    </div>
+                    <a href="#" alt="Tandişler" data-featherlight="<img src=&quot;/img/res/demircelik/tandis.jpg&quot; class=&quot;featherlight-image iron-steel&quot; />" style="top: 38%;left: 46%;">• Tandişler</a>
+                    <a href="#" alt="Pota" data-featherlight="<img src=&quot;/img/res/demircelik/potaladle.jpg&quot; class=&quot;featherlight-image iron-steel&quot; />" style="top: 48%;left: 46%;">• Pota</a>
+                    <a href=".reheat1" alt="Tav Fırını" style="top: 58%;left: 46%;" class="reheat-furnace">• Tav Fırını</a>
+                    <div class="reheat1">
+                        <img src="/img/res/demircelik/tf.jpg" class="featherlight-image iron-steel">
+                    </div>
+                    <a href=".reheat2" alt="Tav Fırını" class="reheat-furnace"></a>
+                    <div class="reheat2">
+                        <img src="/img/res/demircelik/tf2.jpg" class="featherlight-image iron-steel">
+                    </div>
+                    <a href=".eao1" alt="Elektrik Ark Ocağı" style="top: 48%;left: 69%;" class="eao">• Elektrik Ark Ocağı</a>
+                    <div class="eao1">
+                        <img src="/img/res/demircelik/eao1.jpg" class="featherlight-image iron-steel">
+                    </div>
+                    <a href=".eao2" alt="Elektrik Ark Ocağı" class="eao"></a>
+                    <div class="eao2">
+                        <img src="/img/res/demircelik/eao2.jpg" class="featherlight-image iron-steel">
+                    </div>
+                    <a href=".eao3" alt="Elektrik Ark Ocağı" class="eao"></a>
+                    <div class="eao3">
+                        <img src="/img/res/demircelik/eao3.jpg" class="featherlight-image iron-steel">
+                    </div>
+                </div>
+            }
+            else if (Model.Title == "IRON & STEEL INDUSTRY")
+            {
+                <div class="imageMap">
+                    <img src="~/img/res/demircelik/schemablueen.png" />
+                    <a href="#" alt="Blast Furnace" data-featherlight="<img src=&quot;/img/res/demircelik/yf.jpg&quot; class=&quot;featherlight-image iron-steel&quot; />" style="top: 28%;left: 5%;">• Blast Furnace</a>
+                    <a href="#" alt="Hot Blast Stove" data-featherlight="<img src=&quot;/img/res/demircelik/yfsobasi.jpg&quot; class=&quot;featherlight-image iron-steel&quot; />" style="top: 38%;left: 3%;">• Hot Blast Stove</a>
+                    <a href="#" alt="Pig Iron Transport Vessel Torpedo Car" data-featherlight="<img src=&quot;/img/res/demircelik/pik.jpg&quot; class=&quot;featherlight-image iron-steel&quot; />" style="top: 48%;left: 1%;">• Pig Iron Transport Vessel Torpedo Car</a>
+                    <a href="#" alt="BOF Converter" data-featherlight="<img src=&quot;/img/res/demircelik/bof.jpg&quot; class=&quot;featherlight-image iron-steel&quot; />" style="top: 58%;left: 3%;">• BOF Converter</a>
+                    <a href=".combustion1" alt="Combustion Chamber" class="combustion-chamber" style="top: 68%;left: 5%;">• Combustion Chamber</a>
+                    <div class="combustion1">
+                        <img src="/img/res/demircelik/yanmaoda.jpg" class="featherlight-image iron-steel">
+                    </div>
+                    <a href=".combustion2" alt="Combustion Chamber" class="combustion-chamber"></a>
+                    <div class="combustion2">
+                        <img src="/img/res/demircelik/yanmaoda2.jpg" class="featherlight-image iron-steel">
+                    </div>
+                    <a href="#" alt="Tundish" data-featherlight="<img src=&quot;/img/res/demircelik/tandis.jpg&quot; class=&quot;featherlight-image iron-steel&quot; />" style="top: 38%;left: 46%;">• Tundish</a>
+                    <a href="#" alt="Ladle" data-featherlight="<img src=&quot;/img/res/demircelik/potaladle.jpg&quot; class=&quot;featherlight-image iron-steel&quot; />" style="top: 48%;left: 46%;">• Ladle</a>
+                    <a href=".reheat1" alt="Reheat Furnace" style="top: 58%;left: 46%;" class="reheat-furnace">• Reheat Furnace</a>
+                    <div class="reheat1">
+                        <img src="/img/res/demircelik/tf.jpg" class="featherlight-image iron-steel">
+                    </div>
+                    <a href=".reheat2" alt="Reheat Furnace" class="reheat-furnace"></a>
+                    <div class="reheat2">
+                        <img src="/img/res/demircelik/tf2.jpg" class="featherlight-image iron-steel">
+                    </div>
+                    <a href=".eao1" alt="EAF (Electrical Arc Furnace)" style="top: 48%;left: 69%;" class="eao">• EAF (Electrical Arc Furnace)</a>
+                    <div class="eao1">
+                        <img src="/img/res/demircelik/eao1.jpg" class="featherlight-image iron-steel">
+                    </div>
+                    <a href=".eao2" alt="EAF (Electrical Arc Furnace)" class="eao"></a>
+                    <div class="eao2">
+                        <img src="/img/res/demircelik/eao2.jpg" class="featherlight-image iron-steel">
+                    </div>
+                    <a href=".eao3" alt="EAF (Electrical Arc Furnace)" class="eao"></a>
+                    <div class="eao3">
+                        <img src="/img/res/demircelik/eao3.jpg" class="featherlight-image iron-steel">
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

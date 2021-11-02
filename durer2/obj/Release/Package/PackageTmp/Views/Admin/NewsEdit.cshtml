@@ -1,0 +1,70 @@
+﻿@model Dto.NewsDto
+@{
+    ViewBag.Title = "Haber Düzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="page-content">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="sidebar content-box" style="display: block;">
+                <ul class="nav">
+                    <li><a href="/Admin/Pages/28"><i class="glyphicon glyphicon-file"></i> Sayfa Yönetimi</a></li>
+                    <li class="current"><a href="/Admin/News"><i class="glyphicon glyphicon-bullhorn"></i> Haber Yönetimi</a></li>
+                    
+                    <li><a href="/Admin/MediaList"><i class="glyphicon glyphicon-globe"></i> Basın</a></li>
+                    <li><a href="/Admin/Catalogs"><i class="glyphicon glyphicon-certificate"></i> Kataloglar</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="content-box-header">
+                                <div class="panel-title">Haber Düzenle</div>
+
+                                <div class="panel-options">
+                                    <a href="/Admin/NewsList/@Model.Id" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-chevron-left"></i> Geri Dön</a>
+                                </div>
+                            </div>
+                            <div class="content-box-large box-with-header">
+                                @if (ViewData["success"] != null)
+                                {
+                                    <div class="alert alert-success">
+                                        @ViewData["success"].ToString()
+                                    </div>
+                                }
+                                <form role="form" method="post" action="/Admin/NewsEdit/@Model.LocaleId" enctype="multipart/form-data">
+                                    <fieldset>
+                                        <b>Dil: </b> @(Model.Lang == "tr-TR" ? "Türkçe" : "İngilizce")
+                                        <div class="form-group">
+                                            <label>Başlık</label>
+                                            <input class="form-control" type="text" name="Title" value="@Model.Title" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>İçerik</label>
+                                            <textarea class="form-control" rows="3" name="Content" id="editor" required>@Model.Content</textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Tarih</label>
+                                            <input type="text" class="form-control" name="CreateDate" required placeholder="gg/aa/yyyy" value="@Model.CreateDate.ToString("dd'/'MM'/'yyyy")" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}" />
+                                        </div>
+                                    </fieldset>
+                                    <div>
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fa fa-save"></i>
+                                            Kaydet
+                                        </button>
+                                    </div>
+                                    @Html.HiddenFor(Model => Model.LocaleId)
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,306 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DURER - BAŞVURU FORMU</title>
+    <link rel="stylesheet" href="/js/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.3/summernote.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+    <div class="page-content container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content-box-large">
+                    <div class="panel-body">
+                        <img src="~/img/haznedar-group-lg.jpg" class="app-form-logo" />
+                        <form class="form-horizontal app-form" action="/basvuru" method="post">
+                            @if (ViewData["success"] != null)
+                            {
+                                <div class="alert alert-success">
+                                    @ViewData["success"].ToString()
+                                </div>
+                            }
+                            <fieldset>
+                                <legend>MÜRACAAT FORMU</legend>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="text-field">Adı Soyadı</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="text" name="FullName" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="text-field">Doğum Yeri ve Yılı</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="text" name="Birth" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="text-field">Medeni Hali</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="text" name="Marital" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="text-field">Askerlik Durumu</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="text" name="Military" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="textarea">İkametgah Adresi</label>
+                                    <div class="col-md-10">
+                                        <textarea class="form-control" rows="3" name="Address" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="text-field">Tel No</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="text" name="Tel" required>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Öğrenim Durumu</legend>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="text-field">Mezun olduğu okul</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="text" name="School" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="text-field">Fakülte/Bölüm</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="text" name="Department" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="text-field">Mezuniyet Tarihi</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="text" name="Graduation" required>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend>YABANCI DİL</legend>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">1-</label>
+                                    <div class="col-md-10">
+                                        <div class="col-md-3">
+                                            <input class="form-control" type="text" name="Lang1Name">
+                                        </div>
+                                        <label class="radio radio-inline">
+                                            <input type="radio" name="lang1" value="Az">
+                                            Az
+                                        </label>
+                                        <label class="radio radio-inline">
+                                            <input type="radio" name="lang1" value="Orta">
+                                            Orta
+                                        </label>
+                                        <label class="radio radio-inline">
+                                            <input type="radio" name="lang1" value="İyi">
+                                            İyi
+                                        </label>
+                                        <label class="radio radio-inline">
+                                            <input type="radio" name="lang1" value="Çok İyi">
+                                            Çok İyi
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">2-</label>
+                                    <div class="col-md-10">
+                                        <div class="col-md-3">
+                                            <input class="form-control" type="text" name="Lang2Name">
+                                        </div>
+                                        <label class="radio radio-inline">
+                                            <input type="radio" name="Lang2" value="Az">
+                                            Az
+                                        </label>
+                                        <label class="radio radio-inline">
+                                            <input type="radio" name="Lang2" value="Orta">
+                                            Orta
+                                        </label>
+                                        <label class="radio radio-inline">
+                                            <input type="radio" name="Lang2" value="İyi">
+                                            İyi
+                                        </label>
+                                        <label class="radio radio-inline">
+                                            <input type="radio" name="Lang2" value="Çok İyi">
+                                            Çok İyi
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">3-</label>
+                                    <div class="col-md-10">
+                                        <div class="col-md-3">
+                                            <input class="form-control" type="text" name="Lang3Name">
+                                        </div>
+                                        <label class="radio radio-inline">
+                                            <input type="radio" name="lang3" value="Az">
+                                            Az
+                                        </label>
+                                        <label class="radio radio-inline">
+                                            <input type="radio" name="lang3" value="Orta">
+                                            Orta
+                                        </label>
+                                        <label class="radio radio-inline">
+                                            <input type="radio" name="lang3" value="İyi">
+                                            İyi
+                                        </label>
+                                        <label class="radio radio-inline">
+                                            <input type="radio" name="lang3" value="Çok İyi">
+                                            Çok İyi
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend>ÖNCEKİ ÇALIŞMA ALANI</legend>
+                                <div class="form-group">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Firma Adı/Tel No</th>
+                                                <th>Faaliyet Alanı</th>
+                                                <th>Çalıştığınız Tarih</th>
+                                                <th>Göreviniz</th>
+                                                <th>Ayrılma Nedeni</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><input class="form-control" type="text" name="Firm1"></td>
+                                                <td><input class="form-control" type="text" name="Business1"></td>
+                                                <td><input class="form-control" type="text" name="Date1"></td>
+                                                <td><input class="form-control" type="text" name="Job1"></td>
+                                                <td><input class="form-control" type="text" name="Reason1"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" type="text" name="Firm2"></td>
+                                                <td><input class="form-control" type="text" name="Business2"></td>
+                                                <td><input class="form-control" type="text" name="Date2"></td>
+                                                <td><input class="form-control" type="text" name="Job2"></td>
+                                                <td><input class="form-control" type="text" name="Reason2"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" type="text" name="Firm3"></td>
+                                                <td><input class="form-control" type="text" name="Business3"></td>
+                                                <td><input class="form-control" type="text" name="Date3"></td>
+                                                <td><input class="form-control" type="text" name="Job3"></td>
+                                                <td><input class="form-control" type="text" name="Reason3"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend>REFERANSLAR</legend>
+                                <div class="form-group">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Adı Soyadı</th>
+                                                <th>Adresi</th>
+                                                <th>Tel</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><input class="form-control" type="text" name="RefName1"></td>
+                                                <td><input class="form-control" type="text" name="RefAddress1"></td>
+                                                <td><input class="form-control" type="text" name="RefTel1"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" type="text" name="RefName2"></td>
+                                                <td><input class="form-control" type="text" name="RefAddress2"></td>
+                                                <td><input class="form-control" type="text" name="RefTel2"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" type="text" name="RefName3"></td>
+                                                <td><input class="form-control" type="text" name="RefAddress3"></td>
+                                                <td><input class="form-control" type="text" name="RefTel3"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend>PERSONEL ADAYININ İSTEKLERİ</legend>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="text-field">Görev Almak İstediğiniz Bölüm</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="text" name="Request" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="text-field">İstediğiniz Ücret (net)</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="text" name="Wage" required>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend>KİŞİSEL BİGİLER</legend>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="text-field">BOY</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="text" name="Height" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="text-field">KG</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="text" name="Weight" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="text-field">BEDEN</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="text" name="Size">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="text-field">AYAKKABI NO</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="text" name="ShoeSize">
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <div class="form-actions">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                    </div>
+                                    <button class="btn btn-primary" type="submit">
+                                        <i class="fa fa-save"></i>
+                                        Gönder
+                                    </button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

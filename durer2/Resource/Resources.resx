@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutUpper" xml:space="preserve">
+    <value>HAKKINDA</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Adres:</value>
+  </data>
+  <data name="AssemblyUpper" xml:space="preserve">
+    <value>MONTAJ</value>
+  </data>
+  <data name="CatalogUpper" xml:space="preserve">
+    <value>KATALOG</value>
+  </data>
+  <data name="CatalogUrl" xml:space="preserve">
+    <value>/katalog</value>
+  </data>
+  <data name="CementUpper" xml:space="preserve">
+    <value>ÇİMENTO SEKTÖRÜ</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Şehir</value>
+  </data>
+  <data name="ClientNetworkUpper" xml:space="preserve">
+    <value>MÜŞTERİ AĞI</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>Şirket:</value>
+  </data>
+  <data name="CompanyUpper" xml:space="preserve">
+    <value>KURUMSAL</value>
+  </data>
+  <data name="ConsultancyUpper" xml:space="preserve">
+    <value>DANIŞMANLIK</value>
+  </data>
+  <data name="ContactPerson" xml:space="preserve">
+    <value>Sorumlu Kişi:</value>
+  </data>
+  <data name="ContactUpper" xml:space="preserve">
+    <value>İLETİŞİM</value>
+  </data>
+  <data name="ContactUrl" xml:space="preserve">
+    <value>/iletisim</value>
+  </data>
+  <data name="CopyRight" xml:space="preserve">
+    <value>Haznedar Refrakter ve Durer Monolitik, Haznedar Durer Refrakter adı altında tek bir şirket yapısında buluştu ve Calderys ile güçlerini birleştirdi. Birlikte, yüksek kalite refrakter tuğla ve monolitik ürünlerimiz ile çok yüksek sıcaklıklar ve ağır koşullarda faaliyetlerini yürüten sektörlerin en güçlü çözüm ortağı olmaya devam edeceğiz.</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Ülke</value>
+  </data>
+  <data name="DryingUpper" xml:space="preserve">
+    <value>KURUTMA VE ISITMA</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-posta:</value>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>Fax:</value>
+  </data>
+  <data name="GlassUpper" xml:space="preserve">
+    <value>CAM SEKTÖRÜ</value>
+  </data>
+  <data name="HistoryUpper" xml:space="preserve">
+    <value>TARİHÇE</value>
+  </data>
+  <data name="Homepage" xml:space="preserve">
+    <value>Websitesi:</value>
+  </data>
+  <data name="HomeUpper" xml:space="preserve">
+    <value>ANA SAYFA</value>
+  </data>
+  <data name="HrPolicyUpper" xml:space="preserve">
+    <value>İNSAN KAYNAKLARI POLİTİKASI</value>
+  </data>
+  <data name="HrUpper" xml:space="preserve">
+    <value>İNSAN KAYNAKLARI</value>
+  </data>
+  <data name="IndustriesUpper" xml:space="preserve">
+    <value>SEKTÖRLER</value>
+  </data>
+  <data name="InformationUpper" xml:space="preserve">
+    <value>BİLGİ TOPLUMU HİZMETLERİ</value>
+  </data>
+  <data name="InvestorUpper" xml:space="preserve">
+    <value>YATIRIMCI İLİŞKİLERİ</value>
+  </data>
+  <data name="IronSteelUpper" xml:space="preserve">
+    <value>DEMİR ÇELİK SEKTÖRÜ</value>
+  </data>
+  <data name="LimeUpper" xml:space="preserve">
+    <value>KİREÇ SEKTÖRÜ</value>
+  </data>
+  <data name="MaintenanceUpper" xml:space="preserve">
+    <value>BAKIM</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Mesaj:</value>
+  </data>
+  <data name="MissionVisionUpper" xml:space="preserve">
+    <value>VİZYON VE TAAHHÜT</value>
+  </data>
+  <data name="NewsUpper" xml:space="preserve">
+    <value>HABERLER</value>
+  </data>
+  <data name="NewsUrl" xml:space="preserve">
+    <value>/haberler</value>
+  </data>
+  <data name="NonferrousUpper" xml:space="preserve">
+    <value>DEMİR DIŞI METALURJİ SEKTÖRÜ</value>
+  </data>
+  <data name="OthersUpper" xml:space="preserve">
+    <value>DİĞERLERİ</value>
+  </data>
+  <data name="OurServicesUpper" xml:space="preserve">
+    <value>HİZMETLER</value>
+  </data>
+  <data name="PetroUpper" xml:space="preserve">
+    <value>PETROKİMYA TESİSLERİ VE RAFİNERİLER</value>
+  </data>
+  <data name="PositionsUpper" xml:space="preserve">
+    <value>AÇIK POZİSYONLAR</value>
+  </data>
+  <data name="PressUpper" xml:space="preserve">
+    <value>BASIN</value>
+  </data>
+  <data name="PressUrl" xml:space="preserve">
+    <value>/basin</value>
+  </data>
+  <data name="ProductGradesUpper" xml:space="preserve">
+    <value>ÜRÜN GRUPLARI &amp; KALİTELER</value>
+  </data>
+  <data name="ProductionFlowUpper" xml:space="preserve">
+    <value>ÜRETİM AKIŞI</value>
+  </data>
+  <data name="ProductsUpper" xml:space="preserve">
+    <value>ÜRÜNLER</value>
+  </data>
+  <data name="ProjectEngUpper" xml:space="preserve">
+    <value>PROJE MÜHENDİSLİĞİ</value>
+  </data>
+  <data name="QualityCertificateUpper" xml:space="preserve">
+    <value>SERTİFİKALAR</value>
+  </data>
+  <data name="RawMaterialUpper" xml:space="preserve">
+    <value>HAMMADDE TEDARİĞİ</value>
+  </data>
+  <data name="RequestFormUpper" xml:space="preserve">
+    <value>ÜRÜN REÇETESİ İSTEK FORMU</value>
+  </data>
+  <data name="Sector" xml:space="preserve">
+    <value>Sektör:</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Gönder</value>
+  </data>
+  <data name="SocialResponsibilityUpper" xml:space="preserve">
+    <value>SOSYAL SORUMLULUK</value>
+  </data>
+  <data name="StandartBrickUpper" xml:space="preserve">
+    <value>STANDART TUĞLA ŞEKİLLERİ VE ÖLÇÜLERİ</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Mesajınız gönderildi.</value>
+  </data>
+  <data name="SupervisoryUpper" xml:space="preserve">
+    <value>SÜPERVİZÖRLÜK</value>
+  </data>
+  <data name="SupplierFormUpper" xml:space="preserve">
+    <value>TEDARİKÇİ KAYIT FORMU</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>Telefon:</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Unvan:</value>
+  </data>
+  <data name="UsageUpper" xml:space="preserve">
+    <value>KULLANIM ALANLARI</value>
+  </data>
+  <data name="ValuesUpper" xml:space="preserve">
+    <value>DEĞERLERİMİZ</value>
+  </data>
+  <data name="WasteUpper" xml:space="preserve">
+    <value>ATIK YAKMA TESİSLERİ</value>
+  </data>
+  <data name="ZipCode" xml:space="preserve">
+    <value>Posta Kodu</value>
+  </data>
+  <data name="ServicesUrl" xml:space="preserve">
+    <value>/hizmetler</value>
+  </data>
+  <data name="LogoUrl" xml:space="preserve">
+    <value>logo.png</value>
+  </data>
+  <data name="DurerLogoUrl" xml:space="preserve">
+    <value>durer-refrakter.png</value>
+  </data>
+  <data name="HaznedarLogoUrl" xml:space="preserve">
+    <value>haznedar-refrakter.png</value>
+  </data>
+  <data name="Bricks" xml:space="preserve">
+    <value>Tuğlalar</value>
+  </data>
+  <data name="Monolotics" xml:space="preserve">
+    <value>Monolitik ve Dökme Betonlar</value>
+  </data>
+</root>

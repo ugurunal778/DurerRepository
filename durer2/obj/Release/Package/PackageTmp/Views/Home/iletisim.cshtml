@@ -1,0 +1,55 @@
+﻿@model Dto.ContactDto
+@{
+    ViewBag.Title = "DURER - "+durer2.Resource.Resources.ContactUpper;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content-wrapper">
+    <div class="banner">
+        <img src="img/res/banner4.jpg" />
+    </div>
+    <div class="sub-links">
+        <div class="address">
+            <div class="location">
+                DURER REFRAKTER MALZEMELERI SANAYI VE TICARET A.S.
+                Büyük Çavuşlu Mah. Çerkezköy Cad. No:585 Silivri, ISTANBUL / TURKEY 34930 
+            </div>
+            <div class="tel">
+                +90 533 526 41 71-72
+            </div>
+            <div class="tel">
+                +90 212 7453505(10 Hat)
+            </div>
+            <div class="fax">
+                +90 212 7453515
+            </div>
+            <div class="email">
+                info@durer.com.tr
+
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <script>
+          function initMap() {
+              var pos = { lat: 41.21738441696223, lng: 28.0640770562752 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 11,
+              center: { lat: 41.21738441696223, lng: 28.0640770562752 }
+            }); var contentString = 'DURER REFRAKTER';
+
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+            var marker = new google.maps.Marker({
+              position: pos,
+              map: map
+            });
+            infowindow.open(map, marker);
+          }
+        </script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCk96RKlmS9661GnPhugIgm2J2KnYw7nj8&callback=initMap">
+        </script>
+        <div id="map"></div>
+    </div>
+</div>

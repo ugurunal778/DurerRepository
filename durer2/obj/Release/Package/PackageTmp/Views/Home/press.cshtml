@@ -1,0 +1,37 @@
+﻿@model IList<Dto.ContentDto>
+@{
+    ViewBag.Title = "DURER - " + durer2.Resource.Resources.PressUpper;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var pageLinks = ViewBag.pageLinks;
+}
+<div class="content-wrapper">
+    <div class="banner">
+        <img src="@Url.Content(ViewBag.Banner)" />
+    </div>
+    <div class="sub-links">
+        <ul>
+            @foreach (var item in pageLinks)
+            {
+                <li>
+                    @Html.ActionLink((string)item.Title, "Page", "Home", new { permalink = item.Permalink }, null)
+                </li>
+            }
+            <li><a href="@durer2.Resource.Resources.NewsUrl">@durer2.Resource.Resources.NewsUpper</a></li>
+            <li class="selected"><a href="@durer2.Resource.Resources.PressUrl">@durer2.Resource.Resources.PressUpper</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="press">
+            @foreach (var item in Model)
+            {
+                <div class="press-box">
+                    <a href="@Url.Content(item.FileUrl)" target="_blank">
+                        <img src="@Url.Content(item.ImageUrl)" />
+                        <div class="press-title"><span>@item.Title</span></div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,63 @@
+﻿@using Facade;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/css/reset.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+    <link rel="stylesheet" href="~/css/meanmenu.min.css" />
+    <link rel="stylesheet" href="~/css/featherlight.min.css" />
+    <link rel="stylesheet" href="~/css/featherlight.gallery.min.css" />
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="top-wrapper Row">
+            <div class="mobile-nav">
+                <span><img src="~/img/menu-icon.png" /></span>
+            </div>
+            <div class="header-wrapper">
+                <div class="logo">
+                    <a href="/">
+                        <img src="~/img/@durer2.Resource.Resources.LogoUrl" />
+                    </a>
+                </div>
+                <div class="lang">
+                    @Html.ActionLink("TR", "SetCulture", "Home", new { cultureInfo = "tr-TR" }, null) / @Html.ActionLink("EN", "SetCulture", "Home", new { cultureInfo = "en-US" }, null)
+                </div>
+            </div>
+            <div class="navbar-wrapper">
+                <nav>
+                    @{ Html.RenderAction("Navbar", "Home"); }
+                </nav>
+            </div>
+        </div>
+        @RenderBody()
+
+        <div class='footer-wrapper Row'>
+            <div class="haznedar-group">
+                <a href="http://hgroup.ajansgn.com/" target="_blank"><img src="~/img/haznedar-group.png" /></a>
+            </div>
+            <div class="copyright">
+                @durer2.Resource.Resources.CopyRight
+            </div>
+            <div class="comps">
+                <a href="http://haznedar.ajansgn.com/" target="_blank"><img src="~/img/@durer2.Resource.Resources.HaznedarLogoUrl" /></a>
+                <a href="http://vardar.ajansgn.com/" target="_blank"><img src="~/img/vardar-dolomit.png" /></a>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/detect_swipe/2.1.1/jquery.detect_swipe.min.js"></script>
+    <script type="text/javascript" src="~/js/featherlight.min.js"></script>
+    <script type="text/javascript" src="~/js/featherlight.gallery.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery.zoom.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery.meanmenu.min.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

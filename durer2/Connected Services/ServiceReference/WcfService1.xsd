@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Dto" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Dto" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfContentDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContentDto" nillable="true" type="tns:ContentDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContentDto" nillable="true" type="tns:ArrayOfContentDto" />
+  <xs:complexType name="ContentDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CategoryId" type="xs:int" />
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContentId" type="xs:int" />
+      <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FileTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Lang" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocaleId" type="xs:int" />
+      <xs:element minOccurs="0" name="Order" type="xs:int" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContentDto" nillable="true" type="tns:ContentDto" />
+  <xs:complexType name="ContentBannerDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContentId" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Lang" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContentBannerDto" nillable="true" type="tns:ContentBannerDto" />
+  <xs:complexType name="ArrayOfContentBannerDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContentBannerDto" nillable="true" type="tns:ContentBannerDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContentBannerDto" nillable="true" type="tns:ArrayOfContentBannerDto" />
+  <xs:complexType name="ArrayOfNewsDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NewsDto" nillable="true" type="tns:NewsDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNewsDto" nillable="true" type="tns:ArrayOfNewsDto" />
+  <xs:complexType name="NewsDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Lang" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocaleId" type="xs:int" />
+      <xs:element minOccurs="0" name="Order" type="xs:int" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NewsDto" nillable="true" type="tns:NewsDto" />
+  <xs:complexType name="ArrayOfNewsImageDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NewsImageDto" nillable="true" type="tns:NewsImageDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNewsImageDto" nillable="true" type="tns:ArrayOfNewsImageDto" />
+  <xs:complexType name="NewsImageDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NewsId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NewsImageDto" nillable="true" type="tns:NewsImageDto" />
+  <xs:complexType name="ArrayOfPageDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PageDto" nillable="true" type="tns:PageDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPageDto" nillable="true" type="tns:ArrayOfPageDto" />
+  <xs:complexType name="PageDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HazrefId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsDurer" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Lang" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocaleId" type="xs:int" />
+      <xs:element minOccurs="0" name="Order" type="xs:int" />
+      <xs:element minOccurs="0" name="ParentId" type="xs:int" />
+      <xs:element minOccurs="0" name="Permalink" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PageDto" nillable="true" type="tns:PageDto" />
+  <xs:complexType name="ArrayOfPageFileDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PageFileDto" nillable="true" type="tns:PageFileDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPageFileDto" nillable="true" type="tns:ArrayOfPageFileDto" />
+  <xs:complexType name="PageFileDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FileUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Lang" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocaleId" type="xs:int" />
+      <xs:element minOccurs="0" name="Order" type="xs:int" />
+      <xs:element minOccurs="0" name="PageId" type="xs:int" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PageFileDto" nillable="true" type="tns:PageFileDto" />
+</xs:schema>

@@ -1,0 +1,27 @@
+﻿@model IList<Dto.ContentDto>
+@{
+    ViewBag.Title = "DURER - "+durer2.Resource.Resources.OurServicesUpper;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var pageLinks = ViewBag.pageLinks;
+}
+<div class="content-wrapper">
+    <div class="banner">
+        <img src="~/img/res/servicesbanner.jpg" />
+    </div>
+    <div class="sub-links">
+        <ul>
+            @foreach (var item in pageLinks)
+            {
+                <li>
+                    @Html.ActionLink((string)item.Title, "Page", "Home", new { permalink = item.Permalink }, null)
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="content">
+        <p>
+            Refrakter malzemelerinin uygulama kalitesi, daha yüksek üretkenlik, daha düşük maliyet ve üretim hacminde artış sağlamak için ürün kalitesiyle birlikte ele alınmaktadır. Durer'in refrakter alanının tüm dallarında kapsamlı bilgiye sahip deneyimli danışmanları, denetçileri, tuğla örücüleri ve marangozları bulunmaktadır. Uzman personelimiz, müşterilerimizin ihtiyaçlarını derinlemesine anlayarak her tesis için özel hizmet sunmaktadır.
+        </p>
+    </div>
+</div>
+

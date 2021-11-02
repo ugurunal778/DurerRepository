@@ -1,0 +1,22 @@
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Dto\bin\Debug\Dto.dll
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Dto\bin\Debug\Dto.pdb
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Dto\obj\Debug\Dto.csprojResolveAssemblyReference.cache
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Dto\obj\Debug\Dto.dll
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Dto\obj\Debug\Dto.pdb
+D:\Users\euykan\Desktop\Projeler\Solutions\durer2\Dto\bin\Debug\Dto.dll
+D:\Users\euykan\Desktop\Projeler\Solutions\durer2\Dto\bin\Debug\Dto.pdb
+D:\Users\euykan\Desktop\Projeler\Solutions\durer2\Dto\obj\Debug\Dto.csprojAssemblyReference.cache
+D:\Users\euykan\Desktop\Projeler\Solutions\durer2\Dto\obj\Debug\Dto.csproj.CoreCompileInputs.cache
+D:\Users\euykan\Desktop\Projeler\Solutions\durer2\Dto\obj\Debug\Dto.dll
+D:\Users\euykan\Desktop\Projeler\Solutions\durer2\Dto\obj\Debug\Dto.pdb
+D:\Users\euykan\Desktop\Projeler\Solutions\HaznedarDurer\Dto\bin\Debug\Dto.dll
+D:\Users\euykan\Desktop\Projeler\Solutions\HaznedarDurer\Dto\bin\Debug\Dto.pdb
+D:\Users\euykan\Desktop\Projeler\Solutions\HaznedarDurer\Dto\obj\Debug\Dto.csproj.CoreCompileInputs.cache
+D:\Users\euykan\Desktop\Projeler\Solutions\HaznedarDurer\Dto\obj\Debug\Dto.dll
+D:\Users\euykan\Desktop\Projeler\Solutions\HaznedarDurer\Dto\obj\Debug\Dto.pdb
+F:\İndirilenler\HaznedarDurer\HaznedarDurer\Dto\bin\Debug\Dto.dll
+F:\İndirilenler\HaznedarDurer\HaznedarDurer\Dto\bin\Debug\Dto.pdb
+F:\İndirilenler\HaznedarDurer\HaznedarDurer\Dto\obj\Debug\Dto.csproj.CoreCompileInputs.cache
+F:\İndirilenler\HaznedarDurer\HaznedarDurer\Dto\obj\Debug\Dto.dll
+F:\İndirilenler\HaznedarDurer\HaznedarDurer\Dto\obj\Debug\Dto.pdb
+F:\İndirilenler\HaznedarDurer\HaznedarDurer\Dto\obj\Debug\Dto.csproj.AssemblyReference.cache

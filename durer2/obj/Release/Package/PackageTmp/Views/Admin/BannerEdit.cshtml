@@ -1,0 +1,59 @@
+﻿@model Dto.ContentBannerDto
+
+@{
+    ViewBag.Title = "Banner Düzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-content">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="sidebar content-box" style="display: block;">
+                <ul class="nav">
+                    <li><a href="/Admin/Pages/28"><i class="glyphicon glyphicon-file"></i> Sayfa Yönetimi</a></li>
+                    <li><a href="/Admin/News"><i class="glyphicon glyphicon-bullhorn"></i> Haber Yönetimi</a></li>
+                    <li><a href="/Admin/MediaList"><i class="glyphicon glyphicon-globe"></i> Basın</a></li>
+                    <li><a href="/Admin/Catalogs"><i class="glyphicon glyphicon-certificate"></i> Kataloglar</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="content-box-header">
+                                <div class="panel-title">Banner Düzenle</div>
+
+                            </div>
+                            <div class="content-box-large box-with-header">
+                                @if (ViewData["success"] != null)
+                                {
+                                    <div class="alert alert-success">
+                                        @ViewData["success"].ToString()
+                                    </div>
+                                }
+                                <form role="form" method="post" action="/Admin/BannerEdit/@Model.Id" enctype="multipart/form-data">
+                                    <fieldset>
+                                        <b>Dil: </b> @(Model.Lang == "tr-TR" ? "Türkçe" : "İngilizce")
+                                        <div class="form-group">
+                                            <label>Görsel: <a href=@Url.Content(Model.ImageUrl) target="_blank">(mevcut görseli görüntüle)</a></label>
+                                            <input type="file" class="btn btn-default" name="ImageUrl" required />
+                                        </div>
+                                    </fieldset>
+                                    <div>
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fa fa-save"></i>
+                                            Kaydet
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

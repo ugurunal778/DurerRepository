@@ -1,0 +1,27 @@
+﻿@model IList<Dto.ContentDto>
+@{
+    ViewBag.Title = "DURER - " + durer2.Resource.Resources.OurServicesUpper;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var pageLinks = ViewBag.pageLinks;
+}
+<div class="content-wrapper">
+    <div class="banner">
+        <img src="~/img/res/servicesbanner.jpg" />
+    </div>
+    <div class="sub-links">
+        <ul>
+            @foreach (var item in pageLinks)
+            {
+                <li>
+                    @Html.ActionLink((string)item.Title, "Page", "Home", new { permalink = item.Permalink }, null)
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="content">
+        <p>
+            In refractories the quality of the materials go hand in hand with the quality of application in order to achieve higher productivity, lower costs  and increase in production volume. Durer supplies experienced consultants, supervisors, bricklayers and carpenters who have an extensive knowledge in all aspects of refractory construction. Our specialized personnel have a deep understanding of the needs of our customers and offers customized processing for each plant. 
+        </p>
+    </div>
+</div>
+

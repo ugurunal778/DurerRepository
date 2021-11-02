@@ -1,0 +1,90 @@
+﻿@model IList<Dto.ContentDto>
+
+@{
+    ViewBag.Title = "Kataloglar";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-content">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="sidebar content-box" style="display: block;">
+                <ul class="nav">
+                    <li><a href="/Admin/Pages/28"><i class="glyphicon glyphicon-file"></i> Sayfa Yönetimi</a></li>
+                    <li><a href="/Admin/News"><i class="glyphicon glyphicon-bullhorn"></i> Haber Yönetimi</a></li>
+                    <li><a href="/Admin/Contact"><i class="glyphicon glyphicon-info-sign"></i> İletişim Bilgileri</a></li>
+                    <li><a href="/Admin/AppList"><i class="glyphicon glyphicon-ok"></i> Başvurular</a></li>
+                    <li><a href="/Admin/MediaList"><i class="glyphicon glyphicon-globe"></i> Basın</a></li>
+                    <li class="current"><a href="/Admin/Catalogs"><i class="glyphicon glyphicon-certificate"></i> Kataloglar</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="content-box-header">
+                                <div class="panel-title">Kataloglar</div>
+                                <div class="panel-options">
+                                    <a href="/Admin/BannerList/3" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-pencil"></i> Sayfa Görselini Düzenle</a>
+                                    <a href="/Admin/CatalogAdd" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-plus"></i> Ekle</a>
+                                </div>
+                            </div>
+                            <div class="content-box-large box-with-header">
+                                @if (Model.Count > 0)
+                                {
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Başlık</th>
+                                                <th>Düzenleme</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model)
+                                            {
+                                                <tr>
+                                                    <td>@((item.FileTitle.Length > 50) ? item.FileTitle.Substring(0, 50) + "..." : item.FileTitle)</td>
+                                                    <td>
+
+                                                        @if (item.Active)
+                                                        {
+                                                            <a href="/Admin/CatalogActive/@item.Id" class="btn btn-success btn-xs">
+                                                                Pasifleştir
+                                                            </a>
+                                                        }
+                                                        else
+                                                        {
+                                                            <a href="/Admin/CatalogActive/@item.Id" class="btn btn-danger btn-xs">
+                                                                Aktifleştir
+                                                            </a>
+                                                        }
+                                                        <a href="/Admin/CatalogOrder/@item.Id?isDown=false" class="btn btn-default btn-xs">
+                                                            <span class="glyphicon glyphicon-arrow-up"></span>
+                                                        </a>
+                                                        <a href="/Admin/CatalogOrder/@item.Id?isDown=true" class="btn btn-default btn-xs">
+                                                            <span class="glyphicon glyphicon-arrow-down"></span>
+                                                        </a>
+                                                        <a href="#" class="btn btn-default btn-xs" onclick="javascript:confirm('Emin misiniz?')?document.location = '/Admin/CatalogDelete/@item.Id':'';">
+                                                            <span class="glyphicon glyphicon-remove"></span> Sil
+                                                        </a>
+                                                        <a href="/Admin/Catalog/@item.Id" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-edit"></i> Düzenle</a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                }
+                                else
+                                {
+                                    <span>Henüz katalog eklenmemiş.</span>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

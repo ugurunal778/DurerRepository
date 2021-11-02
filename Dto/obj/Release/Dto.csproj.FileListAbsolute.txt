@@ -1,0 +1,5 @@
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Dto\bin\Release\Dto.dll
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Dto\bin\Release\Dto.pdb
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Dto\obj\Release\Dto.dll
+c:\Users\Hüseyin\documents\visual studio 2015\Projects\durer2\Dto\obj\Release\Dto.pdb
+C:\Users\Hüseyin\Documents\Visual Studio 2015\Projects\durer2\Dto\obj\Release\Dto.csprojResolveAssemblyReference.cache

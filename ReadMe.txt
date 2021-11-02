@@ -1,0 +1,1 @@
+Projenin Dto, Facade ve WEB olmak üzere 3 katmanlı olan hali sorunsuz çalışmaktadır ancak bu hali REST Service eklemekteyim ve henüz tamamlanmadı REST Service kısmı eklenip sorunsuz çalışır hale getirince projeyi tekrardan upload edeceğim
