@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDto.cs" />
-    <Compile Include="ContactDto.cs" />
     <Compile Include="ContentBannerDto.cs" />
     <Compile Include="ContentDto.cs" />
     <Compile Include="NewsDto.cs" />
