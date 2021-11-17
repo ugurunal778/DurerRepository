@@ -1,1 +1,1 @@
-Projenin Dto, Facade ve WEB olmak üzere 3 katmanlı olan hali sorunsuz çalışmaktadır ancak bu haline WCF Service kullanarak SOA eklemekteyim ve henüz tamamlanmadı SOA kısmı eklenip sorunsuz çalışır hale getirince projeyi tekrardan upload edeceğim
+Projen OOP ve SOLID prensiplerine göre hazırlanmış olup Dto, Facade, WcfService ve WEB olmak üzere 4 farklı katmanı bulunmaktadır. 
