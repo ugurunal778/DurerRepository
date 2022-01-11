@@ -10,10 +10,9 @@ using System.Web;
 
 namespace Facade
 {
-    public class PageFacade : FacadeBase, IPageFacade
+    public class PageFacade : FacadeBase
     {
-        public IList<PageDto> GetAllByParentIdPage(int parentId, bool? isActive)
-        
+        public IList<PageDto> GetAllByParentId(int parentId, bool? isActive)
         {
             var data = (from p in EntityModel.Page
                         join q in EntityModel.PageLocale on p.Id equals q.PageId
@@ -34,7 +33,7 @@ namespace Facade
             return data.ToList();
         }
 
-        public IList<PageDto> GetLocalesByPageIdPage(int pageId)
+        public IList<PageDto> GetLocalesByPageId(int pageId)
         {
             var data = (from p in EntityModel.Page
                         join q in EntityModel.PageLocale on p.Id equals q.PageId
@@ -51,7 +50,7 @@ namespace Facade
             return data;
         }
 
-        public List<PageDto> GetProductsPage(bool isDurer)
+        public List<PageDto> GetProducts(bool isDurer)
         {
             var data = (from p in EntityModel.Page
                         join q in EntityModel.PageLocale on p.Id equals q.PageId
@@ -72,12 +71,12 @@ namespace Facade
             return data.ToList();
         }
 
-        public dynamic GetHazrefProductsPage()
+        public dynamic GetHazrefProducts()
         {
             throw new NotImplementedException();
         }
 
-        public PageDto GetLocaleByIdPage(int id)
+        public PageDto GetLocaleById(int id)
         {
             var data = (from p in EntityModel.Page
                         join q in EntityModel.PageLocale on p.Id equals q.PageId
@@ -94,20 +93,20 @@ namespace Facade
             return data;
         }
 
-        public void UpdatePage(int id, string title, string content, string imageUrl)
+        public void Update(int id, string title, string content, string imageUrl)
         {
             var pageLocale = EntityModel.PageLocale.FirstOrDefault(x => x.Id == id);
             if (pageLocale == null)
                 return;
             pageLocale.Title = title;
             pageLocale.Content = content;
-            pageLocale.Permalink = RemoveAccentPage(title.ToLower());
+            pageLocale.Permalink = RemoveAccent(title.ToLower());
             if (!string.IsNullOrWhiteSpace(imageUrl))
                 pageLocale.ImageUrl = imageUrl;
             EntityModel.SaveChanges();
         }
 
-        public PageDto GetByPermalinkPage(string permalink)
+        public PageDto GetByPermalink(string permalink)
         {
             var data = (from p in EntityModel.Page
                         join q in EntityModel.PageLocale on p.Id equals q.PageId
@@ -125,14 +124,14 @@ namespace Facade
             return data;
         }
 
-        public string GetOtherCulturePermalinkPage(string permalink)
+        public string GetOtherCulturePermalink(string permalink)
         {
             PageLocale pl = EntityModel.PageLocale.Where(x => x.Permalink == permalink).FirstOrDefault();
             string otherPermalink = EntityModel.PageLocale.Where(x => x.PageId == pl.PageId && x.Lang != pl.Lang).FirstOrDefault().Permalink;
             return otherPermalink;
         }
 
-        public PageDto GetFirstByParentIdPage(int parentId)
+        public PageDto GetFirstByParentId(int parentId)
         {
             var data = (from p in EntityModel.Page
                         join q in EntityModel.PageLocale on p.Id equals q.PageId
@@ -150,7 +149,7 @@ namespace Facade
             return data;
         }
 
-        public PageDto GetByIdPage(int id)
+        public PageDto GetById(int id)
         {
             var data = (from p in EntityModel.Page
                         join q in EntityModel.PageLocale on p.Id equals q.PageId
@@ -167,7 +166,29 @@ namespace Facade
             return data;
         }
 
-        public bool hasSubLinksPage(int parentId)
+        public IList<PageDto> getPageLinksByParentId(int parentId, bool? isActive)
+        {
+            var data = (from p in EntityModel.Page
+                        join q in EntityModel.PageLocale on p.Id equals q.PageId
+                        where q.Lang == Culture && p.ParentId == parentId
+                        orderby p.Order
+                        select new PageDto()
+                        {
+                            Id = p.Id,
+                            ParentId = p.ParentId,
+                            Title = q.Title,
+                            Active = p.Active,
+                            Permalink = q.Permalink,
+                            IsDurer = p.IsDurer,
+                            HazrefId = p.HazrefId
+                        });
+            if (isActive.HasValue)
+                data = data.Where(x => x.Active == isActive.Value);
+
+            return data.ToList();
+        }
+
+        public bool hasSubLinks(int parentId)
         {
             if (EntityModel.Page.Where(x => x.ParentId == parentId).Count() > 0)
             {
@@ -176,7 +197,21 @@ namespace Facade
             return false;
         }
 
-        public string RemoveAccentPage(string txt)
+        private int GetMaxOrder(int parentId)
+        {
+            if (EntityModel.Page.Any(x => x.ParentId == parentId))
+                return EntityModel.Page.Where(x => x.ParentId == parentId).Max(x => x.Order) + 1;
+            return 1;
+        }
+
+        private int GetMaxFileOrder(int pageId)
+        {
+            if (EntityModel.PageFile.Any(x => x.PageId == pageId))
+                return EntityModel.PageFile.Where(x => x.PageId == pageId).Max(x => x.Order) + 1;
+            return 1;
+        }
+
+        public string RemoveAccent(string txt)
         {
             byte[] bytes = System.Text.Encoding.GetEncoding("Cyrillic").GetBytes(txt);
             string str = System.Text.Encoding.ASCII.GetString(bytes);
@@ -187,15 +222,15 @@ namespace Facade
             return str;
         }
 
-        public void CreatePage(int parentId, string title, string content, string imageUrl)
+        public void Create(int parentId, string title, string content, string imageUrl)
         {
-            string str = RemoveAccentPage(title.ToLower());
+            string str = RemoveAccent(title.ToLower());
 
             var page = new Page()
             {
                 CreateDate = DateTime.Now,
                 ParentId = parentId,
-                Order = GetMaxOrderPage(parentId),
+                Order = GetMaxOrder(parentId),
                 Active = false
             };
             EntityModel.Page.Add(page);
@@ -219,14 +254,14 @@ namespace Facade
             EntityModel.SaveChanges();
         }
 
-        public void UpdateActivePage(int pageId)
+        public void UpdateActive(int pageId)
         {
             var item = EntityModel.Page.FirstOrDefault(x => x.Id == pageId);
             if (item != null) item.Active = !item.Active;
             EntityModel.SaveChanges();
         }
 
-        public bool DeleteItemPage(int pageId)
+        public bool DeleteItem(int pageId)
         {
             EntityModel.Page.Remove(EntityModel.Page.FirstOrDefault(x => x.Id == pageId));
             EntityModel.PageLocale.Where(x => x.PageId == pageId).ToList().ForEach(x => EntityModel.PageLocale.Remove(x));
@@ -239,7 +274,7 @@ namespace Facade
             return true;
         }
 
-        public bool UpdateOrderPage(int pageId, bool isDown)
+        public bool UpdateOrder(int pageId, bool isDown)
         {
             var pageItem = EntityModel.Page.FirstOrDefault(x => x.Id == pageId);
             if (isDown)
@@ -282,7 +317,7 @@ namespace Facade
             }
         }
 
-        public IList<PageFileDto> GetFilesByIdPage(int pageId)
+        public IList<PageFileDto> GetFilesById(int pageId)
         {
             var data = (from p in EntityModel.PageFile
                         join q in EntityModel.PageFileLocale on p.Id equals q.PageFileId
@@ -300,7 +335,7 @@ namespace Facade
             return data.ToList();
         }
 
-        public bool UpdateFileOrderPage(int fileId, bool isDown)
+        public bool UpdateFileOrder(int fileId, bool isDown)
         {
             var fileItem = EntityModel.PageFile.FirstOrDefault(x => x.Id == fileId);
             if (isDown)
@@ -343,7 +378,7 @@ namespace Facade
             }
         }
 
-        public bool DeleteFilePage(int fileId)
+        public bool DeleteFile(int fileId)
         {
             EntityModel.PageFile.Remove(EntityModel.PageFile.FirstOrDefault(x => x.Id == fileId));
             EntityModel.PageFileLocale.Where(x => x.PageFileId == fileId).ToList().ForEach(x => EntityModel.PageFileLocale.Remove(x));
@@ -351,13 +386,13 @@ namespace Facade
             return true;
         }
 
-        public void CreateFilePage(int pageId, string fileUrl, string title)
+        public void CreateFile(int pageId, string fileUrl, string title)
         {
             var pageFile = new PageFile()
             {
                 CreateDate = DateTime.Now,
                 PageId = pageId,
-                Order = GetMaxFileOrderPage(pageId)
+                Order = GetMaxFileOrder(pageId)
             };
             EntityModel.PageFile.Add(pageFile);
             EntityModel.SaveChanges();
@@ -374,7 +409,7 @@ namespace Facade
             EntityModel.SaveChanges();
         }
 
-        public IList<PageFileDto> GetFileLocalesByIdPage(int fileId)
+        public IList<PageFileDto> GetFileLocalesById(int fileId)
         {
             var data = (from p in EntityModel.PageFile
                         join q in EntityModel.PageFileLocale on p.Id equals q.PageFileId
@@ -390,7 +425,7 @@ namespace Facade
             return data;
         }
 
-        public void UpdateFilePage(int id, string fileUrl, string title)
+        public void UpdateFile(int id, string fileUrl, string title)
         {
             var pageLocale = EntityModel.PageFileLocale.FirstOrDefault(x => x.Id == id);
             if (pageLocale == null)
@@ -401,7 +436,7 @@ namespace Facade
             EntityModel.SaveChanges();
         }
 
-        public PageFileDto GetFileLocaleByIdPage(int id)
+        public PageFileDto GetFileLocaleById(int id)
         {
             var data = (from p in EntityModel.PageFile
                         join q in EntityModel.PageFileLocale on p.Id equals q.PageFileId
@@ -416,42 +451,6 @@ namespace Facade
                             Lang = q.Lang
                         }).FirstOrDefault();
             return data;
-        }
-
-        public IList<PageDto> GetPageLinksByParentIdPage(int parentId, bool? isActive)
-        {
-            var data = (from p in EntityModel.Page
-                        join q in EntityModel.PageLocale on p.Id equals q.PageId
-                        where q.Lang == Culture && p.ParentId == parentId
-                        orderby p.Order
-                        select new PageDto()
-                        {
-                            Id = p.Id,
-                            ParentId = p.ParentId,
-                            Title = q.Title,
-                            Active = p.Active,
-                            Permalink = q.Permalink,
-                            IsDurer = p.IsDurer,
-                            HazrefId = p.HazrefId
-                        });
-            if (isActive.HasValue)
-                data = data.Where(x => x.Active == isActive.Value);
-
-            return data.ToList();
-        }
-
-        public int GetMaxOrderPage(int parentId)
-        {
-            if (EntityModel.Page.Any(x => x.ParentId == parentId))
-                return EntityModel.Page.Where(x => x.ParentId == parentId).Max(x => x.Order) + 1;
-            return 1;
-        }
-
-        public int GetMaxFileOrderPage(int pageId)
-        {
-            if (EntityModel.PageFile.Any(x => x.PageId == pageId))
-                return EntityModel.PageFile.Where(x => x.PageId == pageId).Max(x => x.Order) + 1;
-            return 1;
         }
     }
 }

@@ -9,7 +9,7 @@ using System.Net.Mail;
 
 namespace Facade
 {
-    public class MailFacade : FacadeBase, IMailFacade
+    public class MailFacade : FacadeBase
     {
         public void SendMail(string body, string fullName, string title)
         {

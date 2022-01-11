@@ -3,27 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Facade;
 using System.Web.UI.WebControls;
 using System.IO;
-using durer2.ServiceReference;
 
 namespace durer2.Controllers
 {
     public class BaseController : Controller
     {
-        private WcfServiceClient _projectService;
+        private PageFacade _pageFacade;
+        private UserFacade _userFacade;
+        private NewsFacade _newsFacade;
+        private ContentFacade _contentFacade;
+        private MailFacade _mailFacade;
 
-        public WcfServiceClient ProjectService
+        public PageFacade PageFacade
         {
-            //get
-            //{
-            //    if (_projectService is null)
-            //    {
-            //        _projectService = new WcfServiceClient();
-            //    }
-            //    return _projectService;
-            //}
-            get { return _projectService ?? (_projectService = new WcfServiceClient()); }
+            get { return _pageFacade ?? (_pageFacade = new PageFacade()); }
+        }
+
+        public UserFacade UserFacade
+        {
+            get { return _userFacade ?? (_userFacade = new UserFacade()); }
+        }
+
+        public NewsFacade NewsFacade
+        {
+            get { return _newsFacade ?? (_newsFacade = new NewsFacade()); }
+        }
+
+        public ContentFacade ContentFacade
+        {
+            get { return _contentFacade ?? (_contentFacade = new ContentFacade()); }
+        }
+
+        public MailFacade MailFacade
+        {
+            get { return _mailFacade ?? (_mailFacade = new MailFacade()); }
         }
 
         public string UploadImage(HttpPostedFileBase uploaded)

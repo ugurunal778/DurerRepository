@@ -6,7 +6,6 @@ using System.Net;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
-using durer2.Models;
 
 namespace durer2.Controllers
 {
@@ -20,7 +19,7 @@ namespace durer2.Controllers
         [HttpPost]
         public ActionResult Login(string user, string pass)
         {
-            if (!ProjectService.CheckLoginUser(user, pass))
+            if (!UserFacade.CheckLogin(user, pass))
             {
                 ViewData["error"] = "Yanlış kullanıcı/şifre";
                 return View();
@@ -45,40 +44,40 @@ namespace durer2.Controllers
         [UserAuthorize]
         public ActionResult Pages(int id)
         {
-            return View(ProjectService.GetAllByParentIdPage(id, null));
+            return View(PageFacade.GetAllByParentId(id, null));
         }
 
         [UserAuthorize]
         public ActionResult PageList(int id)
         {
-            if (ProjectService.hasSubLinksPage(id))
+            if (PageFacade.hasSubLinks(id))
             {
-                var subPages = ProjectService.GetPageLinksByParentIdPage(id, null);
+                var subPages = PageFacade.getPageLinksByParentId(id, null);
                 ViewBag.subPage = true;
                 return View(subPages);
             }
-            ViewBag.pageFiles = ProjectService.GetFilesByIdPage(id);
-            return View(ProjectService.GetLocalesByPageIdPage(id));
+            ViewBag.pageFiles = PageFacade.GetFilesById(id);
+            return View(PageFacade.GetLocalesByPageId(id));
         }
 
         [UserAuthorize]
         public ActionResult PageEdit(int id)
         {
-            var locale = ProjectService.GetLocaleByIdPage(id);
+            var locale = PageFacade.GetLocaleById(id);
             return View(locale);
         }
 
         [UserAuthorize]
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult PageEdit([Bind(Include = "Title, Content, LocaleId")] ServiceReference.PageDto page, HttpPostedFileBase ImageUrl)
+        public ActionResult PageEdit([Bind(Include = "Title, Content, LocaleId")] Dto.PageDto page, HttpPostedFileBase ImageUrl)
         {
             string imgUrl = null;
             if (ImageUrl != null)
             {
                 imgUrl = UploadImage(ImageUrl);
             }
-            ProjectService.UpdatePage(page.LocaleId, page.Title, page.Content, imgUrl);
+            PageFacade.Update(page.LocaleId, page.Title, page.Content, imgUrl);
             ViewData["Success"] = "Kaydedildi";
             return RedirectToAction("PageEdit", new { id = page.LocaleId });
         }
@@ -86,14 +85,14 @@ namespace durer2.Controllers
         [UserAuthorize]
         public ActionResult PageAdd(int id)
         {
-            ViewBag.parentPages = ProjectService.GetAllByParentIdPage(id, null);
+            ViewBag.parentPages = PageFacade.GetAllByParentId(id, null);
             return View();
         }
 
         [UserAuthorize]
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult PageAdd(int id, [Bind(Include = "ParentId, Title, Content")] ServiceReference.PageDto page, HttpPostedFileBase ImageUrl)
+        public ActionResult PageAdd(int id, [Bind(Include = "ParentId, Title, Content")] Dto.PageDto page, HttpPostedFileBase ImageUrl)
         {
             string imgUrl = null;
             if (ImageUrl != null)
@@ -104,92 +103,85 @@ namespace durer2.Controllers
             {
                 page.ParentId = id;
             }
-            ProjectService.CreatePage(page.ParentId, page.Title, page.Content, imgUrl);
+            PageFacade.Create(page.ParentId, page.Title, page.Content, imgUrl);
             ViewData["Success"] = "Eklendi";
-            ViewBag.parentPages = ProjectService.GetAllByParentIdPage(id, null);
+            ViewBag.parentPages = PageFacade.GetAllByParentId(id, null);
             return View();
         }
 
         [UserAuthorize]
         public ActionResult PageActive(int id)
         {
-            ProjectService.UpdateActivePage(id);
+            PageFacade.UpdateActive(id);
             return Redirect(Request.UrlReferrer.ToString());
         }
 
         [UserAuthorize]
         public ActionResult PageDelete(int id)
         {
-            var page = ProjectService.DeleteItemPage(id);
+            var page = PageFacade.DeleteItem(id);
             return Redirect(Request.UrlReferrer.ToString());
         }
 
         [UserAuthorize]
         public ActionResult PageOrder(int id, bool isDown)
         {
-            var news = ProjectService.UpdateOrderPage(id, isDown);
+            var news = PageFacade.UpdateOrder(id, isDown);
             return Redirect(Request.UrlReferrer.ToString());
         }
 
         [UserAuthorize]
         public ActionResult News()
         {
-            var news = ProjectService.GetAllNews(null);
-            return View(news);
-        }
-
-        [UserAuthorize]
-        public ActionResult News2()
-        {
-            var news = ProjectService.GetAllNews(null);
+            var news = NewsFacade.GetAll(null);
             return View(news);
         }
 
         [UserAuthorize]
         public ActionResult NewsActive(int id)
         {
-            ProjectService.UpdateActiveNews(id);
+            NewsFacade.UpdateActive(id);
             return Redirect(Request.UrlReferrer.ToString());
         }
 
         [UserAuthorize]
         public ActionResult NewsOrder(int id, bool isDown)
         {
-            var news = ProjectService.UpdateOrderNews(id, isDown);
+            var news = NewsFacade.UpdateOrder(id, isDown);
             return Redirect(Request.UrlReferrer.ToString());
         }
 
         [UserAuthorize]
         public ActionResult NewsDelete(int id)
         {
-            var news = ProjectService.DeleteItemNews(id);
+            var news = NewsFacade.DeleteItem(id);
             return Redirect(Request.UrlReferrer.ToString());
         }
 
         [UserAuthorize]
         public ActionResult NewsList(int id)
         {
-            var locales = ProjectService.GetLocalesByIdNews(id);
-            ViewBag.images = ProjectService.GetImagesByIdNews(id);
+            var locales = NewsFacade.GetLocalesById(id);
+            ViewBag.images = NewsFacade.GetImagesById(id);
             return View(locales);
         }
 
         [UserAuthorize]
         public ActionResult NewsEdit(int id)
         {
-            var locale = ProjectService.GetLocaleByIdNews(id);
+            var locale = NewsFacade.GetLocaleById(id);
             return View(locale);
         }
 
         [HttpPost]
         [ValidateInput(false)]
         [UserAuthorize]
-        public ActionResult NewsEdit([Bind(Include = "Title, Content, LocaleId")] ServiceReference.NewsDto news, string CreateDate)
+        public ActionResult NewsEdit([Bind(Include = "Title, Content, LocaleId")] Dto.NewsDto news, string CreateDate)
         {
             if (news.Title != null)
             {
                 DateTime date = DateTime.ParseExact(CreateDate, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                ProjectService.UpdateNews(news.LocaleId, news.Title, news.Content, date);
+                NewsFacade.Update(news.LocaleId, news.Title, news.Content, date);
                 ViewData["Success"] = "Kaydedildi";
             }
             else
@@ -208,10 +200,10 @@ namespace durer2.Controllers
         [UserAuthorize]
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult NewsAdd([Bind(Include = "Title, Content")] ServiceReference.NewsDto news, string CreateDate)
+        public ActionResult NewsAdd([Bind(Include = "Title, Content")] Dto.NewsDto news, string CreateDate)
         {
             DateTime date = DateTime.Parse(CreateDate);
-            ProjectService.CreateNews(news.Title, news.Content, date);
+            NewsFacade.Create(news.Title, news.Content, date);
             ViewData["Success"] = "Eklendi";
             return View(news);
         }
@@ -232,7 +224,7 @@ namespace durer2.Controllers
             {
                 imgUrl = UploadImage(ImageUrl);
             }
-            ProjectService.CreateImageNews(id, imgUrl);
+            NewsFacade.CreateImage(id, imgUrl);
             ViewData["Success"] = "Eklendi";
             return View();
         }
@@ -240,14 +232,14 @@ namespace durer2.Controllers
         [UserAuthorize]
         public ActionResult NewsDeleteImage(int id)
         {
-            var news = ProjectService.DeleteImageNews(id);
+            var news = NewsFacade.DeleteImage(id);
             return Redirect(Request.UrlReferrer.ToString());
         }
 
         [UserAuthorize]
         public ActionResult NewsEditImage(int id)
         {
-            var image = ProjectService.GetImageByIdNews(id);
+            var image = NewsFacade.GetImageById(id);
             return View(image);
         }
 
@@ -261,7 +253,7 @@ namespace durer2.Controllers
             {
                 imgUrl = UploadImage(ImageUrl);
             }
-            ProjectService.UpdateImageNews(id, imgUrl);
+            NewsFacade.UpdateImage(id, imgUrl);
             ViewData["Success"] = "Güncellendi";
             return Redirect(Request.UrlReferrer.ToString());
         }
@@ -269,14 +261,14 @@ namespace durer2.Controllers
         [UserAuthorize]
         public ActionResult PageOrderFile(int id, bool isDown)
         {
-            var news = ProjectService.UpdateFileOrderPage(id, isDown);
+            var news = PageFacade.UpdateFileOrder(id, isDown);
             return Redirect(Request.UrlReferrer.ToString());
         }
 
         [UserAuthorize]
         public ActionResult PageDeleteFile(int id)
         {
-            var news = ProjectService.DeleteFilePage(id);
+            var news = PageFacade.DeleteFile(id);
             return Redirect(Request.UrlReferrer.ToString());
         }
 
@@ -296,7 +288,7 @@ namespace durer2.Controllers
             {
                 flUrl = UploadImage(FileUrl);
             }
-            ProjectService.CreateFilePage(id, flUrl, Title);
+            PageFacade.CreateFile(id, flUrl, Title);
             ViewData["Success"] = "Eklendi";
             return View();
         }
@@ -304,13 +296,13 @@ namespace durer2.Controllers
         [UserAuthorize]
         public ActionResult PageFileList(int id)
         {
-            return View(ProjectService.GetFileLocalesByIdPage(id));
+            return View(PageFacade.GetFileLocalesById(id));
         }
 
         [UserAuthorize]
         public ActionResult PageEditFile(int id)
         {
-            var file = ProjectService.GetFileLocaleByIdPage(id);
+            var file = PageFacade.GetFileLocaleById(id);
             return View(file);
         }
 
@@ -324,7 +316,7 @@ namespace durer2.Controllers
             {
                 flUrl = UploadImage(FileUrl);
             }
-            ProjectService.UpdateFilePage(id, flUrl, Title);
+            PageFacade.UpdateFile(id, flUrl, Title);
             ViewData["Success"] = "Güncellendi";
             return Redirect(Request.UrlReferrer.ToString());
         }
@@ -333,28 +325,28 @@ namespace durer2.Controllers
         [UserAuthorize]
         public ActionResult MediaList()
         {
-            var mediaList = ProjectService.GetAllByCategoryIdContent(1, null);
+            var mediaList = ContentFacade.GetAllByCategoryId(1, null);
             return View(mediaList);
         }
 
         [UserAuthorize]
         public ActionResult MediaActive(int id)
         {
-            ProjectService.UpdateActiveContent(id);
+            ContentFacade.UpdateActive(id);
             return Redirect(Request.UrlReferrer.ToString());
         }
 
         [UserAuthorize]
         public ActionResult MediaDelete(int id)
         {
-            var content = ProjectService.DeleteItemContent(id);
+            var content = ContentFacade.DeleteItem(id);
             return Redirect(Request.UrlReferrer.ToString());
         }
 
         [UserAuthorize]
         public ActionResult MediaOrder(int id, bool isDown)
         {
-            var news = ProjectService.UpdateOrderContent(id, isDown);
+            var news = ContentFacade.UpdateOrder(id, isDown);
             return Redirect(Request.UrlReferrer.ToString());
         }
 
@@ -367,7 +359,7 @@ namespace durer2.Controllers
         [UserAuthorize]
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult MediaAdd([Bind(Include = "CategoryId, Title, ImageUrl")] ServiceReference.ContentDto content, HttpPostedFileBase ImageUrl, HttpPostedFileBase FileUrl)
+        public ActionResult MediaAdd([Bind(Include = "CategoryId, Title, ImageUrl")] Dto.ContentDto content, HttpPostedFileBase ImageUrl, HttpPostedFileBase FileUrl)
         {
             string imgUrl = null;
             if (ImageUrl != null)
@@ -380,7 +372,7 @@ namespace durer2.Controllers
                 flUrl = UploadImage(FileUrl);
             }
             content.CategoryId = 1;
-            ProjectService.CreateContent(content.CategoryId, content.Title, "", "", flUrl, imgUrl);
+            ContentFacade.Create(content.CategoryId, content.Title, "", "", flUrl, imgUrl);
             ViewData["Success"] = "Eklendi";
             return View();
         }
@@ -388,20 +380,20 @@ namespace durer2.Controllers
         [UserAuthorize]
         public ActionResult Media(int id)
         {
-            var mediaLocales = ProjectService.GetLocalesByContentIdContent(id);
+            var mediaLocales = ContentFacade.GetLocalesByContentId(id);
             return View(mediaLocales);
         }
         [UserAuthorize]
         public ActionResult MediaEdit(int id)
         {
-            var locale = ProjectService.GetLocaleByIdContent(id);
+            var locale = ContentFacade.GetLocaleById(id);
             return View(locale);
         }
 
         [UserAuthorize]
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult MediaEdit(int id, [Bind(Include = "Title, LocaleId")] ServiceReference.ContentDto content, HttpPostedFileBase ImageUrl, HttpPostedFileBase FileUrl)
+        public ActionResult MediaEdit(int id, [Bind(Include = "Title, LocaleId")] Dto.ContentDto content, HttpPostedFileBase ImageUrl, HttpPostedFileBase FileUrl)
         {
             string imgUrl = null;
             if (ImageUrl != null)
@@ -413,7 +405,7 @@ namespace durer2.Controllers
             {
                 flUrl = UploadImage(FileUrl);
             }
-            ProjectService.UpdateContent(content.LocaleId, content.Title, "", "", flUrl, imgUrl);
+            ContentFacade.Update(content.LocaleId, content.Title, "", "", flUrl, imgUrl);
             ViewData["Success"] = "Kaydedildi";
             return RedirectToAction("MediaEdit", new { id = content.LocaleId });
         }
@@ -421,28 +413,28 @@ namespace durer2.Controllers
         [UserAuthorize]
         public ActionResult Catalogs()
         {
-            var certificates = ProjectService.GetAllByCategoryIdContent(3, null);
+            var certificates = ContentFacade.GetAllByCategoryId(3, null);
             return View(certificates);
         }
 
         [UserAuthorize]
         public ActionResult CatalogActive(int id)
         {
-            ProjectService.UpdateActiveContent(id);
+            ContentFacade.UpdateActive(id);
             return Redirect(Request.UrlReferrer.ToString());
         }
 
         [UserAuthorize]
         public ActionResult CatalogDelete(int id)
         {
-            var content = ProjectService.DeleteItemContent(id);
+            var content = ContentFacade.DeleteItem(id);
             return Redirect(Request.UrlReferrer.ToString());
         }
 
         [UserAuthorize]
         public ActionResult CatalogOrder(int id, bool isDown)
         {
-            var news = ProjectService.UpdateOrderContent(id, isDown);
+            var news = ContentFacade.UpdateOrder(id, isDown);
             return Redirect(Request.UrlReferrer.ToString());
         }
 
@@ -455,7 +447,7 @@ namespace durer2.Controllers
         [UserAuthorize]
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult CatalogAdd([Bind(Include = "CategoryId, FileTitle, FileUrl, ImageUrl")] ServiceReference.ContentDto content, HttpPostedFileBase FileUrl, HttpPostedFileBase ImageUrl)
+        public ActionResult CatalogAdd([Bind(Include = "CategoryId, FileTitle, FileUrl, ImageUrl")] Dto.ContentDto content, HttpPostedFileBase FileUrl, HttpPostedFileBase ImageUrl)
         {
             string flUrl = null;
             if (FileUrl != null)
@@ -468,7 +460,7 @@ namespace durer2.Controllers
                 imgUrl = UploadImage(ImageUrl);
             }
             content.CategoryId = 3;
-            ProjectService.CreateContent(content.CategoryId, "", "", content.FileTitle, flUrl, imgUrl);
+            ContentFacade.Create(content.CategoryId, "", "", content.FileTitle, flUrl, imgUrl);
             ViewData["Success"] = "Eklendi";
             return View();
         }
@@ -476,21 +468,21 @@ namespace durer2.Controllers
         [UserAuthorize]
         public ActionResult Catalog(int id)
         {
-            var mediaLocales = ProjectService.GetLocalesByContentIdContent(id);
+            var mediaLocales = ContentFacade.GetLocalesByContentId(id);
             return View(mediaLocales);
         }
 
         [UserAuthorize]
         public ActionResult CatalogEdit(int id)
         {
-            var locale = ProjectService.GetLocaleByIdContent(id);
+            var locale = ContentFacade.GetLocaleById(id);
             return View(locale);
         }
 
         [UserAuthorize]
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult CatalogEdit(int id, [Bind(Include = "FileTitle, LocaleId")] ServiceReference.ContentDto content, HttpPostedFileBase FileUrl, HttpPostedFileBase ImageUrl)
+        public ActionResult CatalogEdit(int id, [Bind(Include = "FileTitle, LocaleId")] Dto.ContentDto content, HttpPostedFileBase FileUrl, HttpPostedFileBase ImageUrl)
         {
             string flUrl = null;
             if (FileUrl != null)
@@ -502,7 +494,7 @@ namespace durer2.Controllers
             {
                 imgUrl = UploadImage(ImageUrl);
             }
-            ProjectService.UpdateContent(content.LocaleId, "", "", content.FileTitle, flUrl, imgUrl);
+            ContentFacade.Update(content.LocaleId, "", "", content.FileTitle, flUrl, imgUrl);
             ViewData["Success"] = "Kaydedildi";
             return RedirectToAction("CatalogEdit", new { id = content.LocaleId });
         }
@@ -510,14 +502,14 @@ namespace durer2.Controllers
         [UserAuthorize]
         public ActionResult BannerList(int id)
         {
-            var locales = ProjectService.GetBannerLocalesByIdContent(id);
+            var locales = ContentFacade.GetBannerLocalesById(id);
             return View(locales);
         }
 
         [UserAuthorize]
         public ActionResult BannerEdit(int id)
         {
-            var locale = ProjectService.GetBannerLocaleByIdContent(id);
+            var locale = ContentFacade.GetBannerLocaleById(id);
             return View(locale);
         }
 
@@ -531,7 +523,7 @@ namespace durer2.Controllers
             {
                 imgUrl = UploadImage(ImageUrl);
             }
-            ProjectService.UpdateBannerContent(id, imgUrl);
+            ContentFacade.UpdateBanner(id, imgUrl);
             ViewData["Success"] = "Kaydedildi";
             return RedirectToAction("BannerEdit", new { id = id });
         }

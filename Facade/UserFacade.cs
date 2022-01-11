@@ -8,9 +8,9 @@ using System.Web;
 
 namespace Facade
 {
-    public class UserFacade : FacadeBase, IUserFacade
+    public class UserFacade : FacadeBase
     {
-        public bool CheckLoginUser(string username, string pass)
+        public bool CheckLogin(string username, string pass)
         {
             username = username.ToLower();
             pass = pass.ToLower();

@@ -54,18 +54,30 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.SelfHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.SelfHost.5.2.7\lib\net45\System.Web.Http.SelfHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -124,27 +136,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Connected Services\ServiceReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\Api\ContentBannersController.cs" />
+    <Compile Include="Controllers\Api\ContentLocalesController.cs" />
+    <Compile Include="Controllers\Api\ContentsController.cs" />
+    <Compile Include="Controllers\Api\LanguagesController.cs" />
+    <Compile Include="Controllers\Api\NewsController.cs" />
+    <Compile Include="Controllers\Api\NewsImagesController.cs" />
+    <Compile Include="Controllers\Api\NewsLocalesController.cs" />
+    <Compile Include="Controllers\Api\PageFileLocalesController.cs" />
+    <Compile Include="Controllers\Api\PageFilesController.cs" />
+    <Compile Include="Controllers\Api\PageLocaleForIntegrationsController.cs" />
+    <Compile Include="Controllers\Api\PageLocalesController.cs" />
+    <Compile Include="Controllers\Api\Pages1Controller.cs" />
+    <Compile Include="Controllers\Api\PagesController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserAuthorize.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ContactDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resource\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -156,34 +171,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.en-US.resx</DependentUpon>
     </Compile>
-    <Compile Include="RunSafely.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Connected Services\ServiceReference\durer2.ServiceReference.ContentBannerDto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiceReference\durer2.ServiceReference.ContentDto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiceReference\durer2.ServiceReference.NewsDto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiceReference\durer2.ServiceReference.NewsImageDto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiceReference\durer2.ServiceReference.PageDto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiceReference\durer2.ServiceReference.PageFileDto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <None Include="Connected Services\ServiceReference\WcfService.disco" />
-    <None Include="Connected Services\ServiceReference\configuration91.svcinfo" />
-    <None Include="Connected Services\ServiceReference\configuration.svcinfo" />
-    <None Include="Connected Services\ServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="css\featherlight.gallery.min.css" />
     <Content Include="css\featherlight.min.css" />
     <Content Include="css\main.css" />
@@ -369,16 +358,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="img\res\df95463c-a865-4921-9c05-e01038ea595c.xlsx" />
-    <None Include="Connected Services\ServiceReference\WcfService.wsdl" />
-    <None Include="Connected Services\ServiceReference\WcfService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiceReference\WcfService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiceReference\WcfService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Project_Readme.html" />
     <Content Include="Views\Home\iletisim.cshtml" />
     <Content Include="Views\Home\Page.cshtml" />
@@ -422,9 +401,16 @@
     <Content Include="Views\Home\supplier.cshtml" />
     <Content Include="Views\Home\hizmetler.cshtml" />
     <Content Include="Views\Home\services.cshtml" />
-    <Content Include="Views\Home\haberler2.cshtml" />
-    <Content Include="Views\Home\news2.cshtml" />
-    <Content Include="Views\Admin\News2.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dto\Dto.csproj">
+      <Project>{54c18d96-e160-4594-9564-9774548fca80}</Project>
+      <Name>Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Facade\Facade.csproj">
+      <Project>{2332696d-0aaf-4231-9606-470e5ad93b72}</Project>
+      <Name>Facade</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resource\Resources.en-US.resx">
@@ -438,9 +424,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ServiceReference\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -461,8 +444,6 @@
           <DevelopmentServerPort>55148</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:55148/</IISUrl>
-          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://localhost:55148/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
