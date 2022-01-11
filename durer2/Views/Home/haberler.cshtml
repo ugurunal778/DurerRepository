@@ -1,4 +1,4 @@
-﻿@model IList<durer2.ServiceReference.NewsImageDto>
+﻿@model IList<Dto.NewsImageDto>
 @{
     ViewBag.Title = "DURER - " + durer2.Resource.Resources.NewsUpper;
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -23,7 +23,7 @@
     </div>
     <div class="content">
         <div class="news">
-            @for (int i = 0; i < ViewBag.News.Length; i++)
+            @for (int i = 0; i < ViewBag.News.Count; i++)
             {
                 <a href="javascript: void(0)" class="news-title"><span>@ViewBag.News[i].CreateDate.ToString("d MMM yyyy")</span>@ViewBag.News[i].Title</a>
                 <div class='news-accordion'>

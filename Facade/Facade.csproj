@@ -43,7 +43,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
-    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -64,11 +63,6 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="FacadeBase.cs" />
-    <Compile Include="IContentFacade.cs" />
-    <Compile Include="IMailFacade.cs" />
-    <Compile Include="INewsFacade.cs" />
-    <Compile Include="IPageFacade.cs" />
-    <Compile Include="IUserFacade.cs" />
     <Compile Include="Languages.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

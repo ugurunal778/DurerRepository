@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
-using durer2.Models;
 
 namespace durer2.Controllers
 {
@@ -15,14 +14,14 @@ namespace durer2.Controllers
         {
             return View();
         }
+
         public ActionResult Page(string permalink, bool? isSub)
         {
-            var page = ProjectService.GetByPermalinkPage(permalink);
-
+            var page = PageFacade.GetByPermalink(permalink);
 
             if (page == null)
             {
-                string newPerma = ProjectService.GetOtherCulturePermalinkPage(permalink);
+                string newPerma = PageFacade.GetOtherCulturePermalink(permalink);
                 if (isSub == true)
                 {
                     return RedirectToAction("Page", new { permalink = newPerma, isSub = true });
@@ -32,21 +31,21 @@ namespace durer2.Controllers
                     return RedirectToAction("Page", new { permalink = newPerma });
                 }
             }
-            ViewBag.pageFiles = ProjectService.GetFilesByIdPage(page.Id);
-            if (ProjectService.hasSubLinksPage(page.Id))
+            ViewBag.pageFiles = PageFacade.GetFilesById(page.Id);
+            if (PageFacade.hasSubLinks(page.Id))
             {
-                page = ProjectService.GetFirstByParentIdPage(page.Id);
+                page = PageFacade.GetFirstByParentId(page.Id);
                 return RedirectToAction("Page", new { permalink = page.Permalink, isSub = true });
             }
             if (isSub == true)
             {
-                ViewBag.pageSubLinks = ProjectService.GetPageLinksByParentIdPage(page.ParentId, true);
-                var parentPage = ProjectService.GetByIdPage(page.ParentId);
-                ViewBag.pageLinks = ProjectService.GetPageLinksByParentIdPage(parentPage.ParentId, true);
+                ViewBag.pageSubLinks = PageFacade.getPageLinksByParentId(page.ParentId, true);
+                var parentPage = PageFacade.GetById(page.ParentId);
+                ViewBag.pageLinks = PageFacade.getPageLinksByParentId(parentPage.ParentId, true);
                 ViewBag.permalink = parentPage.Permalink;
                 ViewBag.parentId = parentPage.ParentId;
-                var hazrefProducts = ProjectService.GetProductsPage(false);
-                var durerProducts = ProjectService.GetProductsPage(true);
+                var hazrefProducts = PageFacade.GetProducts(false);
+                var durerProducts = PageFacade.GetProducts(true);
                 var hazrefProductsExists = hazrefProducts.Any(x => x.Permalink == permalink);
                 var durerProductsExists = durerProducts.Any(x => x.Permalink == permalink);
 
@@ -57,10 +56,11 @@ namespace durer2.Controllers
                 ViewBag.DurerProducts = durerProducts;
                 return View(page);
             }
-            ViewBag.pageLinks = ProjectService.GetPageLinksByParentIdPage(page.ParentId, true);
+            ViewBag.pageLinks = PageFacade.getPageLinksByParentId(page.ParentId, true);
             ViewBag.parentId = 0;
             return View(page);
         }
+
         public ActionResult iletisim()
         {
             if (CultureInfo.CurrentUICulture.ToString() == "en-US")
@@ -69,6 +69,7 @@ namespace durer2.Controllers
             }
             return View();
         }
+
         public ActionResult contact()
         {
             if (CultureInfo.CurrentUICulture.ToString() == "tr-TR")
@@ -77,6 +78,8 @@ namespace durer2.Controllers
             }
             return View();
         }
+
+
         public ActionResult basvuru()
         {
             return View();
@@ -117,10 +120,12 @@ namespace durer2.Controllers
                         <b>Ağırlık (kg):</b> " + Weight + @"  <br />
                         <b>Beden:</b> " + Size + @"  <br />
                         <b>Ayakkabı Numarası:</b> " + ShoeSize + @"  <br />";
-            ProjectService.SendMail(body, FullName, "Başvuru Formu");
+            MailFacade.SendMail(body, FullName, "Başvuru Formu");
             ViewData["Success"] = "Mesajınız Gönderildi.";
             return View();
         }
+
+
         public ActionResult msds()
         {
             return View();
@@ -138,7 +143,7 @@ namespace durer2.Controllers
                         <b>Şehir/Ülke/Posta Kodu:</b> " + City + " / " + Country + " / " + ZipCode + @" <br />
                         <b>Telefon:</b> " + Phone + @"  <br />
                         <b>Mesaj:</b> " + Message + " <br />";
-            ProjectService.SendMail(body, FullName, "Ürün Reçetesi İstek Formu");
+            MailFacade.SendMail(body, FullName, "Ürün Reçetesi İstek Formu");
             ViewData["Success"] = "Mesajınız Gönderildi.";
             return View();
         }
@@ -162,7 +167,7 @@ namespace durer2.Controllers
                         <b>Unvan:</b> " + Title + @"  <br />
                         <b>E-Posta</b> " + Email + @" <br />
                         <b>Mesaj:</b> " + Message + " <br />";
-            ProjectService.SendMail(body, ContactPerson, "Tedarikçi Kayıt Formu");
+            MailFacade.SendMail(body, ContactPerson, "Tedarikçi Kayıt Formu");
             ViewData["Success"] = "Mesajınız Gönderildi.";
             return View();
         }
@@ -173,9 +178,9 @@ namespace durer2.Controllers
             {
                 return RedirectToAction("press");
             }
-            ViewBag.pageLinks = ProjectService.GetPageLinksByParentIdPage(28, true);
-            ViewBag.Banner = ProjectService.GetBannerLocaleByContentIdContent(1).ImageUrl;
-            var press = ProjectService.GetAllByCategoryIdContent(1, true);
+            ViewBag.pageLinks = PageFacade.getPageLinksByParentId(28, true);
+            ViewBag.Banner = ContentFacade.GetBannerLocaleByContentId(1).ImageUrl;
+            var press = ContentFacade.GetAllByCategoryId(1, true);
             return View(press);
         }
 
@@ -185,9 +190,9 @@ namespace durer2.Controllers
             {
                 return RedirectToAction("basin");
             }
-            ViewBag.pageLinks = ProjectService.GetPageLinksByParentIdPage(28, true);
-            ViewBag.Banner = ProjectService.GetBannerLocaleByContentIdContent(1).ImageUrl;
-            var press = ProjectService.GetAllByCategoryIdContent(1, true);
+            ViewBag.pageLinks = PageFacade.getPageLinksByParentId(28, true);
+            ViewBag.Banner = ContentFacade.GetBannerLocaleByContentId(1).ImageUrl;
+            var press = ContentFacade.GetAllByCategoryId(1, true);
             return View(press);
         }
 
@@ -197,9 +202,9 @@ namespace durer2.Controllers
             {
                 return RedirectToAction("catalog");
             }
-            ViewBag.pageLinks = ProjectService.GetPageLinksByParentIdPage(30, true);
-            ViewBag.Banner = ProjectService.GetBannerLocaleByContentIdContent(3).ImageUrl;
-            var catalogs = ProjectService.GetAllByCategoryIdContent(3, true);
+            ViewBag.pageLinks = PageFacade.getPageLinksByParentId(30, true);
+            ViewBag.Banner = ContentFacade.GetBannerLocaleByContentId(3).ImageUrl;
+            var catalogs = ContentFacade.GetAllByCategoryId(3, true);
             return View(catalogs);
         }
 
@@ -209,9 +214,9 @@ namespace durer2.Controllers
             {
                 return RedirectToAction("katalog");
             }
-            ViewBag.pageLinks = ProjectService.GetPageLinksByParentIdPage(30, true);
-            ViewBag.Banner = ProjectService.GetBannerLocaleByContentIdContent(3).ImageUrl;
-            var catalogs = ProjectService.GetAllByCategoryIdContent(3, true);
+            ViewBag.pageLinks = PageFacade.getPageLinksByParentId(30, true);
+            ViewBag.Banner = ContentFacade.GetBannerLocaleByContentId(3).ImageUrl;
+            var catalogs = ContentFacade.GetAllByCategoryId(3, true);
             return View(catalogs);
         }
 
@@ -221,8 +226,8 @@ namespace durer2.Controllers
             {
                 return RedirectToAction("services");
             }
-            ViewBag.pageLinks = ProjectService.GetPageLinksByParentIdPage(31, true);
-            ViewBag.Banner = ProjectService.GetBannerLocaleByContentIdContent(3).ImageUrl;
+            ViewBag.pageLinks = PageFacade.getPageLinksByParentId(31, true);
+            ViewBag.Banner = ContentFacade.GetBannerLocaleByContentId(3).ImageUrl;
             return View();
         }
 
@@ -232,8 +237,8 @@ namespace durer2.Controllers
             {
                 return RedirectToAction("hizmetler");
             }
-            ViewBag.pageLinks = ProjectService.GetPageLinksByParentIdPage(31, true);
-            ViewBag.Banner = ProjectService.GetBannerLocaleByContentIdContent(3).ImageUrl;
+            ViewBag.pageLinks = PageFacade.getPageLinksByParentId(31, true);
+            ViewBag.Banner = ContentFacade.GetBannerLocaleByContentId(3).ImageUrl;
             return View();
         }
 
@@ -243,10 +248,10 @@ namespace durer2.Controllers
             {
                 return RedirectToAction("news");
             }
-            ViewBag.pageLinks = ProjectService.GetPageLinksByParentIdPage(28, true);
-            ViewBag.Banner = ProjectService.GetBannerLocaleByContentIdContent(4).ImageUrl;
-            ViewBag.News = ProjectService.GetAllNews(true);
-            var images = ProjectService.GetAllImagesNews();
+            ViewBag.pageLinks = PageFacade.getPageLinksByParentId(28, true);
+            ViewBag.Banner = ContentFacade.GetBannerLocaleByContentId(4).ImageUrl;
+            ViewBag.News = NewsFacade.GetAll(true);
+            var images = NewsFacade.GetAllImages();
             return View(images);
         }
 
@@ -256,36 +261,10 @@ namespace durer2.Controllers
             {
                 return RedirectToAction("haberler");
             }
-            ViewBag.pageLinks = ProjectService.GetPageLinksByParentIdPage(28, true);
-            ViewBag.Banner = ProjectService.GetBannerLocaleByContentIdContent(4).ImageUrl;
-            ViewBag.News = ProjectService.GetAllNews(true);
-            var images = ProjectService.GetAllImagesNews();
-            return View(images);
-        }
-
-        public ActionResult haberler2()
-        {
-            if (CultureInfo.CurrentUICulture.ToString() == "en-US")
-            {
-                return RedirectToAction("news2");
-            }
-            ViewBag.pageLinks = ProjectService.GetPageLinksByParentIdPage(28, true);
-            ViewBag.Banner = ProjectService.GetBannerLocaleByContentIdContent(4).ImageUrl;
-            ViewBag.News = ProjectService.GetAllNews(true);
-            var images = ProjectService.GetAllImagesNews();
-            return View(images);
-        }
-
-        public ActionResult news2()
-        {
-            if (CultureInfo.CurrentUICulture.ToString() == "tr-TR")
-            {
-                return RedirectToAction("haberler2");
-            }
-            ViewBag.pageLinks = ProjectService.GetPageLinksByParentIdPage(28, true);
-            ViewBag.Banner = ProjectService.GetBannerLocaleByContentIdContent(4).ImageUrl;
-            ViewBag.News = ProjectService.GetAllNews(true);
-            var images = ProjectService.GetAllImagesNews();
+            ViewBag.pageLinks = PageFacade.getPageLinksByParentId(28, true);
+            ViewBag.Banner = ContentFacade.GetBannerLocaleByContentId(4).ImageUrl;
+            ViewBag.News = NewsFacade.GetAll(true);
+            var images = NewsFacade.GetAllImages();
             return View(images);
         }
 
@@ -302,12 +281,12 @@ namespace durer2.Controllers
         [ChildActionOnly]
         public ActionResult Navbar()
         {
-            ViewBag.Nav1 = ProjectService.GetAllByParentIdPage(28, true);
-            ViewBag.Nav2 = ProjectService.GetAllByParentIdPage(29, true);
-            ViewBag.Nav3 = ProjectService.GetAllByParentIdPage(30, true);
-            ViewBag.Nav4 = ProjectService.GetAllByParentIdPage(31, true);
+            ViewBag.Nav1 = PageFacade.GetAllByParentId(28, true);
+            ViewBag.Nav2 = PageFacade.GetAllByParentId(29, true);
+            ViewBag.Nav3 = PageFacade.GetAllByParentId(30, true);
+            ViewBag.Nav4 = PageFacade.GetAllByParentId(31, true);
             //ViewBag.Nav5 = PageFacade.GetAllByParentId(32, true);
-            ViewBag.Nav6 = ProjectService.GetAllByParentIdPage(33, true);
+            ViewBag.Nav6 = PageFacade.GetAllByParentId(33, true);
             return PartialView();
         }
     }

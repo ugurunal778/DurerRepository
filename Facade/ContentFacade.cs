@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Facade
 {
-    public class ContentFacade:FacadeBase, IContentFacade
+    public class ContentFacade:FacadeBase
     {
-        public IList<ContentDto> GetAllByCategoryIdContent(int catId, bool? isActive)
+        public IList<ContentDto> GetAllByCategoryId(int catId, bool? isActive)
         {
             var data = (from p in EntityModel.Content
                         join q in EntityModel.ContentLocale on p.Id equals q.ContentId
@@ -33,14 +33,14 @@ namespace Facade
             return data.ToList();
         }
 
-        public void UpdateActiveContent(int contentId)
+        public void UpdateActive(int contentId)
         {
             var item = EntityModel.Content.FirstOrDefault(x => x.Id == contentId);
             if (item != null) item.Active = !item.Active;
             EntityModel.SaveChanges();
         }
 
-        public bool DeleteItemContent(int contentId)
+        public bool DeleteItem(int contentId)
         {
             EntityModel.Content.Remove(EntityModel.Content.FirstOrDefault(x => x.Id == contentId));
             EntityModel.ContentLocale.Where(x => x.ContentId == contentId).ToList().ForEach(x => EntityModel.ContentLocale.Remove(x));
@@ -48,7 +48,7 @@ namespace Facade
             return true;
         }
 
-        public bool UpdateOrderContent(int contentId, bool isDown)
+        public bool UpdateOrder(int contentId, bool isDown)
         {
             var contentItem = EntityModel.Content.FirstOrDefault(x => x.Id == contentId);
             if (isDown)
@@ -91,13 +91,13 @@ namespace Facade
             }
         }
 
-        public void CreateContent(int catId, string title, string desc, string fileTitle, string fileUrl, string imageUrl)
+        public void Create(int catId, string title, string desc, string fileTitle, string fileUrl, string imageUrl)
         {
             var content = new Content()
             {
                 CreateDate = DateTime.Now,
                 CategoryId = catId,
-                Order = GetMaxOrderContent(catId),
+                Order = GetMaxOrder(catId),
                 Active = false
             };
             EntityModel.Content.Add(content);
@@ -118,14 +118,14 @@ namespace Facade
             EntityModel.SaveChanges();
         }
 
-        public int GetMaxOrderContent(int catId)
+        private int GetMaxOrder(int catId)
         {
             if (EntityModel.Content.Any(x => x.CategoryId == catId))
                 return EntityModel.Content.Where(x => x.CategoryId == catId).Max(x => x.Order) + 1;
             return 1;
         }
 
-        public IList<ContentDto> GetLocalesByContentIdContent(int contentId)
+        public IList<ContentDto> GetLocalesByContentId(int contentId)
         {
             var data = (from p in EntityModel.Content
                         join q in EntityModel.ContentLocale on p.Id equals q.ContentId
@@ -142,7 +142,7 @@ namespace Facade
             return data;
         }
 
-        public void UpdateContent(int id, string title, string content, string fileTitle, string fileUrl, string imageUrl)
+        public void Update(int id, string title, string content, string fileTitle, string fileUrl, string imageUrl)
         {
             var contentLocale = EntityModel.ContentLocale.FirstOrDefault(x => x.Id == id);
             if (contentLocale == null)
@@ -157,7 +157,7 @@ namespace Facade
             EntityModel.SaveChanges();
         }
 
-        public ContentDto GetLocaleByIdContent(int id)
+        public ContentDto GetLocaleById(int id)
         {
             var data = (from p in EntityModel.Content
                         join q in EntityModel.ContentLocale on p.Id equals q.ContentId
@@ -176,7 +176,7 @@ namespace Facade
             return data;
         }
 
-        public ContentBannerDto GetBannerLocaleByIdContent(int id)
+        public ContentBannerDto GetBannerLocaleById(int id)
         {
             var data = (from p in EntityModel.ContentBanner
                         where p.Id == id
@@ -190,7 +190,7 @@ namespace Facade
             return data;
         }
 
-        public ContentBannerDto GetBannerLocaleByContentIdContent(int id)
+        public ContentBannerDto GetBannerLocaleByContentId(int id)
         {
             var data = (from p in EntityModel.ContentBanner
                         where p.ContentId == id && p.Lang==Culture
@@ -204,7 +204,7 @@ namespace Facade
             return data;
         }
 
-        public IList<ContentBannerDto> GetBannerLocalesByIdContent(int id)
+        public IList<ContentBannerDto> GetBannerLocalesById(int id)
         {
             var data = (from p in EntityModel.ContentBanner
                         where p.ContentId == id
@@ -218,7 +218,7 @@ namespace Facade
             return data;
         }
 
-        public void UpdateBannerContent(int id, string imageUrl)
+        public void UpdateBanner(int id, string imageUrl)
         {
             var contentLocale = EntityModel.ContentBanner.FirstOrDefault(x => x.Id == id);
             if (contentLocale == null)

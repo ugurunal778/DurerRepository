@@ -1,5 +1,5 @@
 ﻿@using System.Text.RegularExpressions;
-@model durer2.ServiceReference.PageDto
+@model Dto.PageDto
 @{
     ViewBag.Title = "DURER - " + Model.Title;
     var pageLinks = ViewBag.pageLinks;
@@ -92,7 +92,7 @@
         {
             <b style="display: block;margin-bottom: 10px;">@Model.Title</b>
             @Html.Raw(Model.Content)
-            if (ViewBag.pageFiles.Length > 0)
+            if (ViewBag.pageFiles.Count > 0)
             {
                 foreach (var item in ViewBag.pageFiles)
                 {
@@ -104,7 +104,7 @@
         else if (Model.Id == 34)
         {
             @Html.Raw(Model.Content)
-            if (ViewBag.pageFiles.Length > 0)
+            if (ViewBag.pageFiles.Count > 0)
             {
                 foreach (var item in ViewBag.pageFiles)
                 {
@@ -114,7 +114,7 @@
         }
         else
         {
-            if (ViewBag.pageFiles.Length > 0)
+            if (ViewBag.pageFiles.Count > 0)
             {
                 foreach (var item in ViewBag.pageFiles)
                 {
@@ -128,7 +128,6 @@
                 {
                     <a href="~/msds" class="msds" data-featherlight="iframe" data-featherlight-iframe-height="475" data-featherlight-iframe-width="500">@durer2.Resource.Resources.RequestFormUpper</a>
                 }
-
                 if (Model.Content != null)
                 {
                     string pattern = @"<img.*?src=""(?<url>.*?)"".*?>";

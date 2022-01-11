@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Facade
 {
-    public class NewsFacade : FacadeBase, INewsFacade
+    public class NewsFacade : FacadeBase
     {
 
-        public IList<NewsDto> GetAllNews(bool? isActive)
+        public IList<NewsDto> GetAll(bool? isActive)
         {
             var data = (from p in EntityModel.News
                         join q in EntityModel.NewsLocale on p.Id equals q.NewsId
@@ -29,7 +29,7 @@ namespace Facade
             return data.ToList();
         }
 
-        public IList<NewsImageDto> GetAllImagesNews()
+        public IList<NewsImageDto> GetAllImages()
         {
             var data = (from p in EntityModel.NewsImage
                         select new NewsImageDto()
@@ -42,14 +42,14 @@ namespace Facade
             return data.ToList();
         }
 
-        public void UpdateActiveNews(int newsId)
+        public void UpdateActive(int newsId)
         {
             var item = EntityModel.News.FirstOrDefault(x => x.Id == newsId);
             if (item != null) item.Active = !item.Active;
             EntityModel.SaveChanges();
         }
 
-        public bool UpdateOrderNews(int newsId, bool isDown)
+        public bool UpdateOrder(int newsId, bool isDown)
         {
             var newsItem = EntityModel.News.FirstOrDefault(x => x.Id == newsId);
             if (isDown)
@@ -92,7 +92,15 @@ namespace Facade
             }
         }
 
-        public bool DeleteItemNews(int newsId)
+
+        private int GetMaxOrder()
+        {
+            if (EntityModel.News.Any())
+                return EntityModel.News.Max(x => x.Order) + 1;
+            return 1;
+        }
+
+        public bool DeleteItem(int newsId)
         {
             EntityModel.News.Remove(EntityModel.News.FirstOrDefault(x => x.Id == newsId));
             EntityModel.NewsLocale.Where(x => x.NewsId == newsId).ToList().ForEach(x => EntityModel.NewsLocale.Remove(x));
@@ -101,7 +109,7 @@ namespace Facade
             return true;
         }
 
-        public IList<NewsDto> GetLocalesByIdNews(int id)
+        public IList<NewsDto> GetLocalesById(int id)
         {
             var data = (from p in EntityModel.News
                         join q in EntityModel.NewsLocale on p.Id equals q.NewsId
@@ -117,7 +125,7 @@ namespace Facade
             return data;
         }
 
-        public NewsDto GetLocaleByIdNews(int id)
+        public NewsDto GetLocaleById(int id)
         {
             var data = (from p in EntityModel.News
                         join q in EntityModel.NewsLocale on p.Id equals q.NewsId
@@ -134,7 +142,7 @@ namespace Facade
             return data;
         }
 
-        public void UpdateNews(int id, string title, string content, DateTime date)
+        public void Update(int id, string title, string content, DateTime date)
         {
             var newsLocale = EntityModel.NewsLocale.FirstOrDefault(x => x.Id == id);
             if (newsLocale == null)
@@ -146,12 +154,12 @@ namespace Facade
             EntityModel.SaveChanges();
         }
 
-        public void CreateNews(string title, string content, DateTime date)
+        public void Create(string title, string content, DateTime date)
         {
             var news = new News()
             {
                 CreateDate = date,
-                Order = GetMaxOrderNews(),
+                Order = GetMaxOrder(),
                 Active = false
             };
 
@@ -173,7 +181,7 @@ namespace Facade
 
         }
 
-        public NewsDto GetByIdNews(int id, bool? isActive)
+        public NewsDto GetById(int id, bool? isActive)
         {
             var data = (from p in EntityModel.News
                         join q in EntityModel.NewsLocale on p.Id equals q.NewsId
@@ -192,7 +200,7 @@ namespace Facade
             return data.FirstOrDefault();
         }
 
-        public IList<NewsImageDto> GetImagesByIdNews(int id)
+        public IList<NewsImageDto> GetImagesById(int id)
         {
             var data = (from p in EntityModel.NewsImage
                         where p.NewsId == id
@@ -204,7 +212,7 @@ namespace Facade
             return data;
         }
 
-        public NewsImageDto GetImageByIdNews(int id)
+        public NewsImageDto GetImageById(int id)
         {
             var data = (from p in EntityModel.NewsImage
                         where p.Id == id
@@ -217,7 +225,7 @@ namespace Facade
             return data;
         }
 
-        public void CreateImageNews(int newsId, string imageUrl)
+        public void CreateImage(int newsId, string imageUrl)
         {
             var newsImage = new NewsImage()
             {
@@ -229,27 +237,20 @@ namespace Facade
             EntityModel.SaveChanges();
         }
 
-        public bool DeleteImageNews(int imageId)
+        public bool DeleteImage(int imageId)
         {
             EntityModel.NewsImage.Remove(EntityModel.NewsImage.FirstOrDefault(x => x.Id == imageId));
             EntityModel.SaveChanges();
             return true;
         }
 
-        public void UpdateImageNews(int id, string imageUrl)
+        public void UpdateImage(int id, string imageUrl)
         {
             var newsImage = EntityModel.NewsImage.FirstOrDefault(x => x.Id == id);
             if (newsImage == null)
                 return;
             newsImage.ImageUrl = imageUrl;
             EntityModel.SaveChanges();
-        }
-
-        public int GetMaxOrderNews()
-        {
-            if (EntityModel.News.Any())
-                return EntityModel.News.Max(x => x.Order) + 1;
-            return 1;
         }
     }
 }

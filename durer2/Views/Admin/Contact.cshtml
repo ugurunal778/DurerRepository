@@ -1,4 +1,4 @@
-﻿@model durer2.Models.ContactDto
+﻿@model Dto.ContactDto
 @{
     ViewBag.Title = "İletişim Bilgileri";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -59,7 +59,7 @@
                                             Kaydet
                                         </button>
                                     </div>
-                                    @Html.HiddenFor(model => model.Id)
+                                    @Html.HiddenFor(Model => Model.Id)
                                 </form>
                             </div>
                         </div>

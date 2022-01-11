@@ -32,7 +32,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDto.cs" />
+    <Compile Include="ContactDto.cs" />
     <Compile Include="ContentBannerDto.cs" />
     <Compile Include="ContentDto.cs" />
     <Compile Include="NewsDto.cs" />
